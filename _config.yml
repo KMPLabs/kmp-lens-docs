@@ -1,0 +1,19 @@
+title: KMP Lens
+description: Open the Apple API report produced by your Kotlin Multiplatform build.
+url: "https://kmplabs.github.io"
+baseurl: "/kmp-lens-docs"
+product_version: "0.1.0-RC.1"
+release_status: "preview"
+permalink: pretty
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - PUBLICATION_ALLOWLIST.txt
+  - vendor
+  - .bundle
+  - .jekyll-cache
+  - .gitignore
+  - scripts
