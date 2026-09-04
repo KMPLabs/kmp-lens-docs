@@ -2,7 +2,7 @@
 layout: default
 title: See your Kotlin Multiplatform Apple API
 description: KMP Lens turns an observed Apple framework build into a developer report.
-eyebrow: KMP Lens documentation preview
+eyebrow: KMP Lens documentation
 permalink: /
 ---
 
@@ -23,4 +23,4 @@ build/reports/kmp-lens/kmp-lens-report.html
 The report is the place to explore the result. This documentation stays focused
 on installing KMP Lens, running it and reaching that report.
 
-<div class="callout"><strong>Release preview:</strong> 0.1.0-RC.1 is not published yet. The installation shown here is the candidate configuration for validation before release.</div>
+<div class="callout"><strong>Release candidate:</strong> 0.1.0-RC.1 is available from Maven Central.</div>

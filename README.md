@@ -1,9 +1,6 @@
 # KMP Lens documentation staging
 
-Minimal public documentation candidate for KMP Lens 0.1.0-RC.1.
-
-This checkout remains an uncommitted local preview. Do not push or deploy it
-before separate release authorization.
+Minimal public documentation for KMP Lens 0.1.0-RC.1.
 
 ## Local preview
 

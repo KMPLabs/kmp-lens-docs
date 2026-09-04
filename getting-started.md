@@ -36,8 +36,7 @@ plugins {
 }
 ```
 
-The release candidate is not published yet; this snippet becomes resolvable
-when `0.1.0-RC.1` is available from Maven Central.
+This release candidate is available from Maven Central.
 
 ## 3. Build and open the report
 
