@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="description" content="Essential checks for reaching a KMP Lens report.">
+    <meta property="og:title" content="Troubleshooting">
+    <meta property="og:description" content="Essential checks for reaching a KMP Lens report.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/troubleshooting/">
+    <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <meta property="og:image:alt" content="KMP Lens">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Troubleshooting · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/troubleshooting/">
+    <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=rc-preview">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell masthead">
+        <a class="brand" href="/kmp-lens-docs/" aria-label="KMP Lens home">
+          <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
+          <span>KMP Lens</span>
+        </a>
+        <span class="release-badge">0.1.0-RC.1 · preview</span>
+      </div>
+      <nav class="shell nav" aria-label="Primary navigation">
+        <a href="/kmp-lens-docs/">Home</a>
+        <a href="/kmp-lens-docs/getting-started/">Getting Started</a>
+        <a href="/kmp-lens-docs/configuration/">Configuration</a>
+        <a href="/kmp-lens-docs/troubleshooting/">Troubleshooting</a>
+        <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+      </nav>
+    </header>
+    <main id="main" class="shell content">
+      <p class="eyebrow">Essential checks</p>
+      <h1 id="troubleshooting">Troubleshooting</h1>
+
+<h2 id="no-report-was-created">No report was created</h2>
+
+<p>Confirm that the plugin is applied and that the executed task actually builds
+an Apple framework. A configuration-only Gradle command does not produce an
+Apple framework for KMP Lens to observe.</p>
+
+<h2 id="the-report-shows-an-unverified-compatibility-family">The report shows an unverified compatibility family</h2>
+
+<p>The analysis still completes on a best-effort basis. Open the report’s
+Compatibility block to see which observed family has not been qualified for
+that exact profile.</p>
+
+<h2 id="source-observation-is-on-but-no-source-appears">Source observation is on but no source appears</h2>
+
+<p>Source observation permits correlation; it does not guarantee that every Apple
+symbol has one exact Kotlin declaration. KMP Lens leaves uncertain attachments
+out of the report.</p>
+
+<h2 id="the-report-belongs-to-a-different-directory-than-expected">The report belongs to a different directory than expected</h2>
+
+<p>Look under the build directory of the Gradle project where the plugin is
+applied. That project can differ from the framework producer when KMP Lens is
+applied at the root.</p>
+
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>KMP Lens</strong>
+          <p>Built by KMPLabs.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="description" content="Install KMP Lens, run an Apple framework build and open the report.">
+    <meta property="og:title" content="Getting Started">
+    <meta property="og:description" content="Install KMP Lens, run an Apple framework build and open the report.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/getting-started/">
+    <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <meta property="og:image:alt" content="KMP Lens">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Getting Started · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/getting-started/">
+    <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=rc-preview">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell masthead">
+        <a class="brand" href="/kmp-lens-docs/" aria-label="KMP Lens home">
+          <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
+          <span>KMP Lens</span>
+        </a>
+        <span class="release-badge">0.1.0-RC.1 · preview</span>
+      </div>
+      <nav class="shell nav" aria-label="Primary navigation">
+        <a href="/kmp-lens-docs/">Home</a>
+        <a href="/kmp-lens-docs/getting-started/">Getting Started</a>
+        <a href="/kmp-lens-docs/configuration/">Configuration</a>
+        <a href="/kmp-lens-docs/troubleshooting/">Troubleshooting</a>
+        <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+      </nav>
+    </header>
+    <main id="main" class="shell content">
+      <p class="eyebrow">Three steps</p>
+      <h1 id="getting-started">Getting Started</h1>
+
+<p>KMP Lens runs as part of a normal Gradle build. It does not replace your build
+task or change the framework it observes.</p>
+
+<h2 id="1-make-the-plugin-available">1. Make the plugin available</h2>
+
+<p>In <code class="language-plaintext highlighter-rouge">settings.gradle.kts</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">pluginManagement</span> <span class="p">{</span>
+    <span class="nf">repositories</span> <span class="p">{</span>
+        <span class="nf">mavenCentral</span><span class="p">()</span>
+        <span class="nf">gradlePluginPortal</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-apply-kmp-lens">2. Apply KMP Lens</h2>
+
+<p>Apply the plugin to the KMP module that produces the Apple framework. If you do
+not yet know the producer, you can apply it to the root project and let the
+report identify the observed producer.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
+    <span class="nf">id</span><span class="p">(</span><span class="s">"io.github.kmplabs.kmp-lens"</span><span class="p">)</span> <span class="n">version</span> <span class="s">"0.1.0-rc.1"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The release candidate is not published yet; this snippet becomes resolvable
+when <code class="language-plaintext highlighter-rouge">0.1.0-RC.1</code> is available from Maven Central.</p>
+
+<h2 id="3-build-and-open-the-report">3. Build and open the report</h2>
+
+<p>Run the Apple framework task your project already uses, for example:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew linkDebugFrameworkIosSimulatorArm64
+</code></pre></div></div>
+
+<p>Open:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/reports/kmp-lens/kmp-lens-report.html
+</code></pre></div></div>
+
+<p>The path is relative to the Gradle project where KMP Lens is applied.</p>
+
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>KMP Lens</strong>
+          <p>Built by KMPLabs.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

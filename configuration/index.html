@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="description" content="The minimal optional KMP Lens configuration.">
+    <meta property="og:title" content="Configuration">
+    <meta property="og:description" content="The minimal optional KMP Lens configuration.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/configuration/">
+    <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <meta property="og:image:alt" content="KMP Lens">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Configuration · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/configuration/">
+    <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=rc-preview">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell masthead">
+        <a class="brand" href="/kmp-lens-docs/" aria-label="KMP Lens home">
+          <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
+          <span>KMP Lens</span>
+        </a>
+        <span class="release-badge">0.1.0-RC.1 · preview</span>
+      </div>
+      <nav class="shell nav" aria-label="Primary navigation">
+        <a href="/kmp-lens-docs/">Home</a>
+        <a href="/kmp-lens-docs/getting-started/">Getting Started</a>
+        <a href="/kmp-lens-docs/configuration/">Configuration</a>
+        <a href="/kmp-lens-docs/troubleshooting/">Troubleshooting</a>
+        <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+      </nav>
+    </header>
+    <main id="main" class="shell content">
+      <p class="eyebrow">Optional settings</p>
+      <h1 id="configuration">Configuration</h1>
+
+<p>No configuration block is required. Applying the plugin enables analysis and
+keeps source observation off by default.</p>
+
+<p>Enable local Kotlin source observation only when you want it:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">kmpArchitectureAnalysis</span> <span class="p">{</span>
+    <span class="nf">sourceObservation</span> <span class="p">{</span>
+        <span class="n">enabled</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>KMP Lens reads authorized local Kotlin source during the build and does not
+upload it. The report only displays source when an exact attachment is
+established.</p>
+
+<p>Without this option, the report remains fully usable and simply omits source
+sections.</p>
+
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>KMP Lens</strong>
+          <p>Built by KMPLabs.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
