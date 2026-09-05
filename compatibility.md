@@ -8,7 +8,8 @@ permalink: /compatibility/
 
 # Compatibility
 
-Use Java 17 and a Kotlin Multiplatform project that produces an Apple framework.
+KMP Lens is qualified against specific Gradle, Kotlin and Kotlin Gradle Plugin
+profiles for Kotlin Multiplatform projects that produce an Apple framework.
 
 KMP Lens evaluates compatibility from the exact toolchain and build information
 observed in the current run. The report's Compatibility block is the authority
