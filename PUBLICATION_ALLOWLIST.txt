@@ -22,4 +22,5 @@ configuration.md
 troubleshooting.md
 compatibility.md
 license.md
+changelog.md
 scripts/serve-local.rb
