@@ -32,7 +32,7 @@ report identify the observed producer.
 
 ```kotlin
 plugins {
-    id("io.github.kmplabs.kmp-lens") version "0.1.0-rc.1"
+    id("io.github.kmplabs.kmp-lens") version "0.1.0-rc.3"
 }
 ```
 

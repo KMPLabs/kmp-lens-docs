@@ -1,6 +1,6 @@
 # KMP Lens documentation staging
 
-Minimal public documentation for KMP Lens 0.1.0-RC.1.
+Minimal public documentation for KMP Lens 0.1.0-RC.3.
 
 ## Local preview
 
