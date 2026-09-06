@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="How KMP Lens reports compatibility for the build it observed.">
-    <meta property="og:title" content="Compatibility">
-    <meta property="og:description" content="How KMP Lens reports compatibility for the build it observed.">
+    <meta name="description" content="Public KMP Lens release history.">
+    <meta property="og:title" content="Changelog">
+    <meta property="og:description" content="Public KMP Lens release history.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/compatibility/">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/changelog/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <meta property="og:image:alt" content="KMP Lens">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Compatibility · KMP Lens</title>
-    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/compatibility/">
+    <title>Changelog · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/changelog/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
@@ -38,26 +38,28 @@
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Current run authority</p>
-      <h1 id="compatibility">Compatibility</h1>
+      <p class="eyebrow">Releases</p>
+      <h1 id="changelog">Changelog</h1>
 
-<p>KMP Lens is qualified against specific Gradle, Kotlin and Kotlin Gradle Plugin
-profiles for Kotlin Multiplatform projects that produce an Apple framework.</p>
-
-<p>KMP Lens evaluates compatibility from the exact toolchain and build information
-observed in the current run. The report’s Compatibility block is the authority
-for that run.</p>
+<h2 id="010-rc3">0.1.0-rc.3</h2>
 
 <ul>
-  <li><strong>Qualified</strong> means the displayed family and exact profile were exercised.</li>
-  <li><strong>Unverified</strong> means analysis continues on a best-effort basis without a
-compatibility promise for that exact profile.</li>
-  <li><strong>Not active</strong> means an optional input was not present.</li>
+  <li>Fixed report population coherence for minimal Apple projects where the final
+framework and header are observable without a primary machine projection.</li>
+  <li>Strengthened pre-release qualification with sparse authority-state consumers.</li>
 </ul>
 
-<p>These states do not form a continuous version range. An unverified family does
-not erase independently established results, and KMP Lens does not invent
-missing information.</p>
+<h2 id="010-rc2--candidate">0.1.0-rc.2 — candidate</h2>
+
+<ul>
+  <li>Improved compatibility with Gradle versions running on earlier supported JVMs.</li>
+  <li>Removed the unnecessary bytecode-level runtime restriction.</li>
+  <li>Compatibility documentation now focuses on qualified Gradle, Kotlin and Kotlin Gradle Plugin profiles.</li>
+</ul>
+
+<h2 id="010-rc1">0.1.0-rc.1</h2>
+
+<p>First public release candidate of KMP Lens.</p>
 
     </main>
     <footer class="site-footer">
