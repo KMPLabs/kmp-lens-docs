@@ -4,20 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="Install KMP Lens, run an Apple framework build and open the report.">
-    <meta property="og:title" content="Getting Started">
-    <meta property="og:description" content="Install KMP Lens, run an Apple framework build and open the report.">
+    <meta name="description" content="Install KMP Lens in a normal Gradle build and open its report.">
+    <meta property="og:title" content="Getting started">
+    <meta property="og:description" content="Install KMP Lens in a normal Gradle build and open its report.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/getting-started/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <meta property="og:image:alt" content="KMP Lens">
+    <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Getting Started · KMP Lens</title>
+    <meta name="twitter:title" content="Getting started">
+    <meta name="twitter:description" content="Install KMP Lens in a normal Gradle build and open its report.">
+    <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <title>Getting started · KMP Lens</title>
     <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/getting-started/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
-    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=rc-preview">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=official-v1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -27,69 +31,108 @@
           <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
           <span>KMP Lens</span>
         </a>
-        <span class="release-badge">0.1.0-RC.3 · available</span>
+        <span class="release-badge">0.1.0-rc.4 · Released</span>
       </div>
       <nav class="shell nav" aria-label="Primary navigation">
-        <a href="/kmp-lens-docs/">Home</a>
-        <a href="/kmp-lens-docs/getting-started/">Getting Started</a>
-        <a href="/kmp-lens-docs/configuration/">Configuration</a>
-        <a href="/kmp-lens-docs/troubleshooting/">Troubleshooting</a>
+        <a href="/kmp-lens-docs/">Overview</a>
+        <a href="/kmp-lens-docs/getting-started/">Get started</a>
+        <a href="/kmp-lens-docs/understanding-the-report/">Understanding the report</a>
         <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+        <a href="/kmp-lens-docs/limitations/">Known limitations</a>
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Three steps</p>
-      <h1 id="getting-started">Getting Started</h1>
+      <p class="eyebrow">Installation</p>
+      <h1 id="getting-started">Getting started</h1>
 
-<p>KMP Lens runs as part of a normal Gradle build. It does not replace your build
-task or change the framework it observes.</p>
+<p>KMP Lens observes the project’s normal Gradle lifecycle. There is no separate KMP Lens workflow to learn.</p>
 
-<h2 id="1-make-the-plugin-available">1. Make the plugin available</h2>
+<h2 id="availability">Availability</h2>
 
-<p>In <code class="language-plaintext highlighter-rouge">settings.gradle.kts</code>:</p>
+<p>KMP Lens <code class="language-plaintext highlighter-rouge">0.1.0-rc.4</code> is the current public release.</p>
 
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">pluginManagement</span> <span class="p">{</span>
-    <span class="nf">repositories</span> <span class="p">{</span>
-        <span class="nf">mavenCentral</span><span class="p">()</span>
-        <span class="nf">gradlePluginPortal</span><span class="p">()</span>
+<p>Implementation coordinate:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>io.github.kmplabs:kmp-lens-gradle-plugin:&lt;published-version&gt;
+</code></pre></div></div>
+
+<p>Gradle plugin ID:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>io.github.kmplabs.kmp-lens
+</code></pre></div></div>
+
+<p>Apply it to the KMP module that produces the Apple framework:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
+    <span class="nf">id</span><span class="p">(</span><span class="s">"io.github.kmplabs.kmp-lens"</span><span class="p">)</span> <span class="n">version</span> <span class="s">"0.1.0-rc.4"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Apply KMP Lens to the Kotlin Multiplatform module that produces
+the Apple framework when you know it. You may instead apply it at the root when
+you are discovering a larger build; KMP Lens reports the plugin host separately
+from the framework producer when they differ. Root placement does not mean that
+KMP Lens scans every repository file.</p>
+
+<p>See <a href="/kmp-lens-docs/applying-analyzer/">Applying KMP Lens</a> for producer
+and root examples.</p>
+
+<h2 id="1-run-your-normal-build">1. Run your normal build</h2>
+
+<p>Use the lifecycle or Apple link task your project already uses, for example:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew build
+</code></pre></div></div>
+
+<p>KMP Lens observes automatically after installation. It does not change compiler options, exports, dependencies, or the artifacts it analyzes.</p>
+
+<h2 id="2-open-the-report">2. Open the report</h2>
+
+<p>The default developer report is:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/reports/kmp-lens/&lt;target&gt;-&lt;buildType&gt;/kmp-lens-report.html
+</code></pre></div></div>
+
+<p>Its assets and detail pages are kept in the adjacent <code class="language-plaintext highlighter-rouge">kmp-lens-report/</code>
+directory. The report directory is replaced in place and retains no per-run
+history. Apple reports always use a slice-qualified directory, including
+single-slice projects; for example <code class="language-plaintext highlighter-rouge">iosSimulatorArm64-debug</code>. Open the exact
+<code class="language-plaintext highlighter-rouge">KMP Lens report:</code> path printed after a successful build. Other slices’ reports
+remain untouched. An old unscoped report at the root is historical and is not
+updated or automatically deleted.</p>
+
+<h2 id="optional-observe-kotlin-source">Optional: observe Kotlin source</h2>
+
+<p>SOURCE observation is <strong>off by default</strong>. Enable it when you want KMP Lens to correlate qualified declarations with local Kotlin source:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">kmpLens</span> <span class="p">{</span>
+    <span class="nf">sourceObservation</span> <span class="p">{</span>
+        <span class="n">enabled</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="2-apply-kmp-lens">2. Apply KMP Lens</h2>
+<p>SOURCE ON reads authorized local source roots during the build. It does not upload source. See <a href="/kmp-lens-docs/source-observation/">Source observation</a>, <a href="/kmp-lens-docs/privacy/">Privacy</a> and <a href="/kmp-lens-docs/configuration/">Configuration</a>.</p>
 
-<p>Apply the plugin to the KMP module that produces the Apple framework. If you do
-not yet know the producer, you can apply it to the root project and let the
-report identify the observed producer.</p>
-
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
-    <span class="nf">id</span><span class="p">(</span><span class="s">"io.github.kmplabs.kmp-lens"</span><span class="p">)</span> <span class="n">version</span> <span class="s">"0.1.0-rc.3"</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>This release candidate is available from Maven Central.</p>
-
-<h2 id="3-build-and-open-the-report">3. Build and open the report</h2>
-
-<p>Run the Apple framework task your project already uses, for example:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew linkDebugFrameworkIosSimulatorArm64
-</code></pre></div></div>
-
-<p>Open:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/reports/kmp-lens/kmp-lens-report.html
-</code></pre></div></div>
-
-<p>The path is relative to the Gradle project where KMP Lens is applied.</p>
+<div class="callout"><strong>Expected behavior:</strong> applying the plugin enables KMP Lens. If an optional integration is absent or incompatible, the build continues with the information that is available; KMP Lens does not guess missing details.</div>
 
     </main>
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
           <strong>KMP Lens</strong>
-          <p>Built by KMPLabs.</p>
+          <p>Proprietary software. Copyright © 2026 KMPLabs. All rights reserved.</p>
         </div>
+        <nav aria-label="Footer navigation">
+          <a href="/kmp-lens-docs/privacy/">Privacy</a>
+          <a href="/kmp-lens-docs/license/">License</a>
+          <a href="/kmp-lens-docs/configuration/">Configuration</a>
+          <a href="/kmp-lens-docs/ci/">CI</a>
+          <a href="/kmp-lens-docs/generated-symbols/">Generated symbols</a>
+          <a href="/kmp-lens-docs/support/">Support</a>
+          <a href="/kmp-lens-docs/changelog/">Changelog</a>
+          <a href="/kmp-lens-docs/release-lifecycle/">Release lifecycle</a>
+        </nav>
       </div>
     </footer>
   </body>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="description" content="Understand the four report pages and the meaning of each symbol-level answer.">
+    <meta property="og:title" content="Understanding the report">
+    <meta property="og:description" content="Understand the four report pages and the meaning of each symbol-level answer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/understanding-the-report/">
+    <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Understanding the report">
+    <meta name="twitter:description" content="Understand the four report pages and the meaning of each symbol-level answer.">
+    <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <title>Understanding the report · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/understanding-the-report/">
+    <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=official-v1">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell masthead">
+        <a class="brand" href="/kmp-lens-docs/" aria-label="KMP Lens home">
+          <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
+          <span>KMP Lens</span>
+        </a>
+        <span class="release-badge">0.1.0-rc.4 · Released</span>
+      </div>
+      <nav class="shell nav" aria-label="Primary navigation">
+        <a href="/kmp-lens-docs/">Overview</a>
+        <a href="/kmp-lens-docs/getting-started/">Get started</a>
+        <a href="/kmp-lens-docs/understanding-the-report/">Understanding the report</a>
+        <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+        <a href="/kmp-lens-docs/limitations/">Known limitations</a>
+      </nav>
+    </header>
+    <main id="main" class="shell content">
+      <p class="eyebrow">Report guide</p>
+      <h1 id="understanding-the-report">Understanding the report</h1>
+
+<p>The report answers practical developer questions: which Apple framework was
+observed, which module produced it, what the run established, which dependencies
+participate, what each Apple symbol represents, where it comes from, how it
+reaches the producer, and where KMP Lens’s knowledge stops.</p>
+
+<h2 id="report-sections">Report sections</h2>
+
+<h3 id="overview">Overview</h3>
+
+<p>Identifies the observed framework, producer and target. When KMP Lens is applied
+outside the producer module, the overview distinguishes the plugin’s observation
+point from the module that actually produced the framework.</p>
+
+<p>It also records the KMP Lens version and revision, report timestamp, source
+mode, scoped compatibility and KMP Lens’s own duration for this run.</p>
+
+<p>Compatibility is classified by knowledge family. One unverified family does not
+invalidate independently qualified Kotlin/Native, Gradle, source or integration
+knowledge.</p>
+
+<h3 id="run-summary">Run Summary</h3>
+
+<p>Summarizes the Apple-symbol and Origin populations established by the run, plus
+the observed architecture outcome and any qualified plugin contribution. Run
+identity remains in Overview instead of being duplicated here. KMP Lens does
+not label a build cold or warm without a dedicated performance authority.</p>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<p>Shows the local and Maven dependencies directly observed from the analyzed
+producer. A dependency path is an observed route through the graph; it is not a
+claim that every edge was declared with a particular Gradle DSL expression.</p>
+
+<p>The dependency graph does not reconstruct Gradle source files. A component can
+be resolved without KMP Lens claiming which build-script line declared it.</p>
+
+<h3 id="investigate">Investigate</h3>
+
+<p>Start with one of four counted populations:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Population</th>
+      <th>What it means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Exact origin</strong></td>
+      <td>The owner of this exact declaration is established.</td>
+    </tr>
+    <tr>
+      <td><strong>Generated support</strong></td>
+      <td>The exact form is identified as generated by Kotlin/Native or SKIE; this is not an application Origin.</td>
+    </tr>
+    <tr>
+      <td><strong>Context only</strong></td>
+      <td>Useful surrounding information is established, but not an exact owner or generated-form answer for this symbol.</td>
+    </tr>
+    <tr>
+      <td><strong>Not established</strong></td>
+      <td>The run has not established one of those answers for this exact symbol.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These populations do not overlap. Summary and navigation count the same Apple
+symbols. A type and each of its members are separate symbols even when shown
+inside a single result card. Generated-support counts combine the Kotlin/Native
+and SKIE counts in the automation summary.</p>
+
+<p>Choose a population, then an exact owner, generator or observed context group,
+then a symbol card. Large APIs do not require paging through a flat list to
+find a starting point. Flat browsing remains available explicitly. Context
+groups describe surrounding information, not ownership of every symbol inside.</p>
+
+<h3 id="search-and-filters">Search and filters</h3>
+
+<p>Search is <strong>global to the framework</strong>, even when Browse filters are retained.
+Its scope is shown next to the search field. Use it directly when you know an
+Apple symbol; an exact match takes priority over partial matches.</p>
+
+<p>Browse can combine population and direct-dependency filters. Active constraints
+stay visible and can be removed independently. An empty intersection stays
+empty—it does not silently show another population. Filters change the view,
+not the facts known about a symbol.</p>
+
+<p>Results use pages of 10 cards. Opening a detail and returning preserves the
+population, group, filters, search, page and position. Every detail retains its
+own declaration Origin, provider, Why you see it, source, generator,
+relationships, context and paths where available.</p>
+
+<h2 id="reading-a-declaration">Reading a declaration</h2>
+
+<p>Each result describes one exact Apple symbol. Members may be grouped below a
+type to make browsing easier, but every member keeps its own answer.</p>
+
+<h3 id="why-you-see-it">Why you see it</h3>
+
+<p>Explains why this exact symbol is visible in the observed Apple API when the run
+can establish a useful reason. It can describe Kotlin visibility, observed
+framework participation, dependency reachability, or a qualified generated
+form. A dependency route alone is not presented as proof that a symbol was
+explicitly exported.</p>
+
+<h3 id="origin">Origin</h3>
+
+<p>Names the established owner of the exact declaration, such as a local Gradle
+module, a Maven component, or the Kotlin standard library. Origin is not copied
+from a parent type to a member, or from a member to its parent.</p>
+
+<h3 id="provided-by">Provided by</h3>
+
+<p>Names the component that supplies the observed declaring artifact when that
+role is independently established. Provider and declaration Origin can have the
+same displayed component, but KMP Lens does not treat the two roles as
+synonyms.</p>
+
+<h3 id="relationships">Relationships</h3>
+
+<p>Explains why a member belongs on its exact container when the final header and
+complete member identity establish a protocol requirement, inherited
+declaration, extension, category or generated-support relation. Several
+compatible protocol requirements remain several valid relationships; they are
+not collapsed into an arbitrary first match. A relationship never establishes
+the owner of the concrete implementation by itself.</p>
+
+<h3 id="generated-by">Generated by</h3>
+
+<p>Identifies a qualified tool that generated the exact Apple form, currently
+Kotlin/Native or SKIE in their verified configurations. A generated form does
+not automatically have a separate application Origin.</p>
+
+<h3 id="context">Context</h3>
+
+<p>Shows exact surrounding information that is useful but does not belong to the
+symbol itself—for example, its exact container or what the observed members of
+a container have in common. Context does not become Origin or a dependency
+path.</p>
+
+<h3 id="kotlin-source">Kotlin Source</h3>
+
+<p>Shows an authorized local source correspondence when SOURCE ON is enabled and
+the run can establish one. A single compatible candidate and multiple possible
+candidates remain visibly different from an exact source attachment. SOURCE OFF
+omits this section without removing independently established knowledge.</p>
+
+<h3 id="gradle-source">Gradle Source</h3>
+
+<p>Shows the exact build declaration responsible for one dependency edge when the
+run observes the declaration, its model effect and the resolved edge as one
+chain. It is distinct from Kotlin Source: Gradle Source explains a build
+decision, not declaration ownership. A convention-plugin dependency points to
+the responsible plugin source rather than the consumer script.</p>
+
+<p>Potentially sensitive declarations are hidden completely. KMP Lens shows only
+a project-relative path, line and minimal safe snippet; it never exposes an
+absolute machine path. When a plugin or build tool adds an edge without an
+exact repository source, the report explains that limit and shows no snippet.
+For Maven-to-Maven transitive edges, the report says published dependency
+metadata unless the responsible metadata format is itself established; it does
+not invent a local Gradle declaration.</p>
+
+<h3 id="dependency-paths">Dependency paths</h3>
+
+<p>Shows observed routes through the resolved Gradle graph from the producer to an
+established Origin. The card starts with a representative route and keeps all
+observed routes accessible. These paths explain reachability; they do not
+reconstruct the Gradle build script.</p>
+
+<h3 id="evidence-used-real-limitations-and-advanced-evidence">Evidence used, real limitations and advanced evidence</h3>
+
+<p><strong>Evidence used</strong> identifies the authority path that established the result.
+<strong>Real limitations</strong> contains only facts that limit that conclusion. An
+unavailable alternative path for an independently established result appears
+under <strong>Advanced evidence</strong>, not as uncertainty about the result.</p>
+
+<h3 id="compatibility">Compatibility</h3>
+
+<p>Compatibility is reported by knowledge family with two separate questions.
+<strong>Observed / Not observed</strong> says whether KMP Lens acquired that family’s input
+in this run. <strong>Qualified / Unverified</strong> says whether the minimum authority needed
+for that family matches an exercised scope. <strong>Unverified / best effort</strong> still
+continues without a compatibility promise. <strong>Not active</strong> means an optional
+integration was not present, and <strong>out of scope</strong> means that family does not
+apply. One unverified family does not erase independently qualified answers.</p>
+
+<h2 id="what-stops-here-means">What “stops here” means</h2>
+
+<p>The report shows the strongest available answer for each relevant dimension.
+“Not determined” means that the dimension could apply but the current run did
+not establish it sufficiently. Dimensions that do not apply are omitted rather
+than displayed as unknown.</p>
+
+<p>For release qualification, every applicable symbol dimension must have either
+an established result or one explicit terminal boundary: legitimately not
+established, information unavailable, ambiguous, adapter missing, or not
+applicable. Population parity alone does not prove this completeness.</p>
+
+<h2 id="one-symbol-one-answer">One symbol, one answer</h2>
+
+<p>Search and browsing show the same established knowledge for the same Apple
+symbol. Grouping a type with its members is a browsing convenience only: a
+member does not automatically inherit its parent’s Origin, source, explanation
+or dependency paths, and a parent does not inherit answers from its members.</p>
+
+<h2 id="automation">Automation</h2>
+
+<p>Do not parse the HTML DOM for automation. The small, privacy-minimized automation
+contract is documented on the <a href="/kmp-lens-docs/ci/">Continuous integration</a> page.</p>
+
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>KMP Lens</strong>
+          <p>Proprietary software. Copyright © 2026 KMPLabs. All rights reserved.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="/kmp-lens-docs/privacy/">Privacy</a>
+          <a href="/kmp-lens-docs/license/">License</a>
+          <a href="/kmp-lens-docs/configuration/">Configuration</a>
+          <a href="/kmp-lens-docs/ci/">CI</a>
+          <a href="/kmp-lens-docs/generated-symbols/">Generated symbols</a>
+          <a href="/kmp-lens-docs/support/">Support</a>
+          <a href="/kmp-lens-docs/changelog/">Changelog</a>
+          <a href="/kmp-lens-docs/release-lifecycle/">Release lifecycle</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

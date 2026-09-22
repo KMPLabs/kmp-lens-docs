@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="Proprietary status of the distributed plugin and public documentation.">
-    <meta property="og:title" content="License">
-    <meta property="og:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="description" content="Current KMP Lens 0.1 boundaries, exact qualification limits and known performance constraints.">
+    <meta property="og:title" content="Known limitations">
+    <meta property="og:description" content="Current KMP Lens 0.1 boundaries, exact qualification limits and known performance constraints.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/limitations/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="License">
-    <meta name="twitter:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="twitter:title" content="Known limitations">
+    <meta name="twitter:description" content="Current KMP Lens 0.1 boundaries, exact qualification limits and known performance constraints.">
     <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <title>License · KMP Lens</title>
-    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <title>Known limitations · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/limitations/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
@@ -42,19 +42,35 @@
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Proprietary software</p>
-      <h1 id="license">License</h1>
+      <p class="eyebrow">Honest stopping points</p>
+      <h1 id="known-limitations">Known limitations</h1>
 
-<p>KMP Lens is proprietary software.</p>
+<p>KMP Lens 0.1 reports only what the observed build can establish. Current limits include:</p>
 
-<p>All rights reserved.</p>
+<ul>
+  <li>compatibility claims are exact profiles, not continuous Kotlin, Gradle,
+Apple-target or SKIE version ranges;</li>
+  <li>Kotlin 2.5 development runs are forward canaries and remain unverified;</li>
+  <li><code class="language-plaintext highlighter-rouge">macosX64</code> is unverified; the current macOS qualification is limited to one
+exact <code class="language-plaintext highlighter-rouge">macosArm64</code> profile;</li>
+  <li>complete declaration-by-declaration Swift semantics are outside KMP Lens 0.1;</li>
+  <li>SOURCE ON cannot attach every generated representation to an exact Kotlin
+declaration, keeps multiple compatible candidates unresolved, and does not
+automatically download Maven dependency sources;</li>
+  <li>the resolved Gradle graph does not reconstruct Gradle build-script source;</li>
+  <li>large Apple APIs can produce large reports. Investigate offers population and provenance/context groups before
+symbol cards; this reduces browsing effort, not the underlying report size;</li>
+  <li>with the observed Kotlin/Native 2.4.0 macOS arm64 baseline, a cold metadata inspection of some Compose
+Foundation libraries can spend about 86–87 seconds inside the Kotlin/Native
+<code class="language-plaintext highlighter-rouge">klib dump-metadata-signatures</code> tool. KMP Lens is not the cause of that tool
+hotspot; later runs can reuse KMP Lens’s bounded cache.</li>
+</ul>
 
-<p>No open-source license has been granted for the KMP Lens implementation or distributed plugin.</p>
+<p>An unavailable answer is not automatically a KMP Lens defect. The report
+distinguishes a relevant answer that was not established from a dimension that
+does not apply.</p>
 
-<p>Documentation-site content is also all rights reserved.</p>
-
-<p>The public Maven metadata identifies the license as <code class="language-plaintext highlighter-rouge">Proprietary</code>. For product
-or licensing questions, see <a href="/kmp-lens-docs/support/">Support</a>.</p>
+<p>See <a href="/kmp-lens-docs/understanding-the-report/">Understanding the report</a> and <a href="/kmp-lens-docs/compatibility/">Compatibility</a>.</p>
 
     </main>
     <footer class="site-footer">

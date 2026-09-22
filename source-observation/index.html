@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="description" content="Understand what SOURCE OFF preserves and what SOURCE ON adds.">
+    <meta property="og:title" content="Source observation">
+    <meta property="og:description" content="Understand what SOURCE OFF preserves and what SOURCE ON adds.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/source-observation/">
+    <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Source observation">
+    <meta name="twitter:description" content="Understand what SOURCE OFF preserves and what SOURCE ON adds.">
+    <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <title>Source observation · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/source-observation/">
+    <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=official-v1">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell masthead">
+        <a class="brand" href="/kmp-lens-docs/" aria-label="KMP Lens home">
+          <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
+          <span>KMP Lens</span>
+        </a>
+        <span class="release-badge">0.1.0-rc.4 · Released</span>
+      </div>
+      <nav class="shell nav" aria-label="Primary navigation">
+        <a href="/kmp-lens-docs/">Overview</a>
+        <a href="/kmp-lens-docs/getting-started/">Get started</a>
+        <a href="/kmp-lens-docs/understanding-the-report/">Understanding the report</a>
+        <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+        <a href="/kmp-lens-docs/limitations/">Known limitations</a>
+      </nav>
+    </header>
+    <main id="main" class="shell content">
+      <p class="eyebrow">Optional local source correlation</p>
+      <h1 id="source-observation">Source observation</h1>
+
+<p>SOURCE observation is <strong>off by default</strong>.</p>
+
+<h2 id="source-off">SOURCE OFF</h2>
+
+<p>KMP Lens can still explain the observed framework, Apple symbols, Origins,
+generators, dependency components and dependency paths when the build provides
+those facts. SOURCE OFF is a normal operating mode, not a failed or degraded
+run.</p>
+
+<h2 id="source-on">SOURCE ON</h2>
+
+<p>Enable local Kotlin source correlation explicitly:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">kmpLens</span> <span class="p">{</span>
+    <span class="nf">sourceObservation</span> <span class="p">{</span>
+        <span class="n">enabled</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>When an exact source declaration can be attached to a symbol, Investigate shows
+it together with its exactly observed Kotlin source set when that information is
+available. Participating source sets can include <code class="language-plaintext highlighter-rouge">commonMain</code>, <code class="language-plaintext highlighter-rouge">iosMain</code>,
+<code class="language-plaintext highlighter-rouge">appleMain</code> or a custom set; KMP Lens does not assume that source belongs to
+<code class="language-plaintext highlighter-rouge">commonMain</code>. When several compatible declarations remain, the report keeps
+them as candidates instead of selecting one. Generated Apple forms without
+their own Kotlin declaration do not receive fabricated application source.</p>
+
+<p>For expect/actual declarations, KMP Lens shows only an exact attachment to the
+participating declaration. It does not replace an unresolved <code class="language-plaintext highlighter-rouge">actual</code> with its
+<code class="language-plaintext highlighter-rouge">expect</code>. Generated compilation roots can be recognized by the build, but their
+contents are not attached as user source unless an exact producer authority is
+available.</p>
+
+<p>KMP Lens can read qualified debug information from the observed Apple artifact:
+directly from a static framework, or from a dynamic framework’s external dSYM
+when that dSYM exactly matches the produced binary identity. Source is attached
+only to the qualified final published Apple surface; intermediate framework
+outputs are not substituted for it.</p>
+
+<p>SOURCE ON enables this correlation but does not guarantee a Kotlin Source result
+for every symbol. A source section is shown only when the current build
+establishes an exact attachment.</p>
+
+<h2 id="performance-on-large-debug-artifacts">Performance on large debug artifacts</h2>
+
+<p>SOURCE ON can take materially longer than SOURCE OFF because exact source
+correlation reads and interprets the matching framework or dSYM debug
+information. This is separate from Apple linkage time and is not primarily a
+scan of Kotlin source text. KMP Lens streams the DWARF output, but it still has
+to acquire the complete evidence needed for exact attachment.</p>
+
+<p>When comparing modes, use the same already-linked framework and matching dSYM,
+and compare the report’s analysis duration separately from Gradle or link wall
+time. SOURCE OFF is the appropriate faster mode when source correspondence is
+not needed.</p>
+
+<p>KMP Lens reads only the local roots authorized by the build configuration. It
+does not upload source. It does not automatically download or attach Maven
+dependency sources. SOURCE OFF omits the Kotlin Source section; it does not
+remove independently established Origin or dependency knowledge.</p>
+
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>KMP Lens</strong>
+          <p>Proprietary software. Copyright © 2026 KMPLabs. All rights reserved.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="/kmp-lens-docs/privacy/">Privacy</a>
+          <a href="/kmp-lens-docs/license/">License</a>
+          <a href="/kmp-lens-docs/configuration/">Configuration</a>
+          <a href="/kmp-lens-docs/ci/">CI</a>
+          <a href="/kmp-lens-docs/generated-symbols/">Generated symbols</a>
+          <a href="/kmp-lens-docs/support/">Support</a>
+          <a href="/kmp-lens-docs/changelog/">Changelog</a>
+          <a href="/kmp-lens-docs/release-lifecycle/">Release lifecycle</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

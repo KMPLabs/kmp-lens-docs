@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="Proprietary status of the distributed plugin and public documentation.">
-    <meta property="og:title" content="License">
-    <meta property="og:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="description" content="Generate and retain the KMP Lens developer report in a normal CI build.">
+    <meta property="og:title" content="Automation and CI">
+    <meta property="og:description" content="Generate and retain the KMP Lens developer report in a normal CI build.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/ci/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="License">
-    <meta name="twitter:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="twitter:title" content="Automation and CI">
+    <meta name="twitter:description" content="Generate and retain the KMP Lens developer report in a normal CI build.">
     <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <title>License · KMP Lens</title>
-    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <title>Automation and CI · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/ci/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
@@ -42,19 +42,41 @@
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Proprietary software</p>
-      <h1 id="license">License</h1>
+      <p class="eyebrow">Automation</p>
+      <h1 id="automation-and-ci">Automation and CI</h1>
 
-<p>KMP Lens is proprietary software.</p>
+<blockquote>
+  <p>Prepared for the first KMP Lens release. No KMP Lens artifact is publicly
+available yet.</p>
+</blockquote>
 
-<p>All rights reserved.</p>
+<p>Run the normal Apple framework build. KMP Lens performs one passive analysis;
+there is no separate CI task:</p>
 
-<p>No open-source license has been granted for the KMP Lens implementation or distributed plugin.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew &lt;your-framework-task&gt;
+</code></pre></div></div>
 
-<p>Documentation-site content is also all rights reserved.</p>
+<p>KMP Lens reuses the same analysis and writes <code class="language-plaintext highlighter-rouge">kmp-lens-report.html</code> for
+developers. Archive the HTML file together with its adjacent
+<code class="language-plaintext highlighter-rouge">kmp-lens-report/</code> support directory if the report must remain browsable after
+the CI job ends.</p>
 
-<p>The public Maven metadata identifies the license as <code class="language-plaintext highlighter-rouge">Proprietary</code>. For product
-or licensing questions, see <a href="/kmp-lens-docs/support/">Support</a>.</p>
+<h2 id="privacy-by-default">Privacy by default</h2>
+
+<p>Apply your repository’s usual artifact-access policy to an archived report:
+explicitly enabled SOURCE observation can include redacted project source
+excerpts, project identifiers and dependency information.</p>
+
+<p>KMP Lens does not fail builds by default and does not invent architecture
+scoring. A family marked Unverified means best-effort for that family; it is
+not a global failure.</p>
+
+<h2 id="reading-the-summary">Reading the summary</h2>
+
+<p>The total shown in the report is a canonical Apple-symbol count, not a count of
+header lines or result cards. Origin, Generated support, Context only and Not
+established describe distinct developer-facing outcomes. Source attachment and
+dependency routes are separate facts, not alternative ownership categories.</p>
 
     </main>
     <footer class="site-footer">

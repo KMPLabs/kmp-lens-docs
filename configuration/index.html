@@ -4,20 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="The minimal optional KMP Lens configuration.">
+    <meta name="description" content="The complete public KMP Lens 0.1 DSL for enabling analysis, source observation, and a custom report directory.">
     <meta property="og:title" content="Configuration">
-    <meta property="og:description" content="The minimal optional KMP Lens configuration.">
+    <meta property="og:description" content="The complete public KMP Lens 0.1 DSL for enabling analysis, source observation, and a custom report directory.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/configuration/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <meta property="og:image:alt" content="KMP Lens">
+    <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Configuration">
+    <meta name="twitter:description" content="The complete public KMP Lens 0.1 DSL for enabling analysis, source observation, and a custom report directory.">
+    <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <title>Configuration · KMP Lens</title>
     <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/configuration/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
-    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=rc-preview">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=official-v1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -27,46 +31,115 @@
           <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
           <span>KMP Lens</span>
         </a>
-        <span class="release-badge">0.1.0-RC.3 · available</span>
+        <span class="release-badge">0.1.0-rc.4 · Released</span>
       </div>
       <nav class="shell nav" aria-label="Primary navigation">
-        <a href="/kmp-lens-docs/">Home</a>
-        <a href="/kmp-lens-docs/getting-started/">Getting Started</a>
-        <a href="/kmp-lens-docs/configuration/">Configuration</a>
-        <a href="/kmp-lens-docs/troubleshooting/">Troubleshooting</a>
+        <a href="/kmp-lens-docs/">Overview</a>
+        <a href="/kmp-lens-docs/getting-started/">Get started</a>
+        <a href="/kmp-lens-docs/understanding-the-report/">Understanding the report</a>
         <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+        <a href="/kmp-lens-docs/limitations/">Known limitations</a>
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Optional settings</p>
+      <p class="eyebrow">Public KMP Lens 0.1 DSL</p>
       <h1 id="configuration">Configuration</h1>
 
-<p>No configuration block is required. Applying the plugin enables analysis and
-keeps source observation off by default.</p>
+<p>Applying the plugin enables analysis, keeps SOURCE observation off, and uses the standard report directory.</p>
 
-<p>Enable local Kotlin source observation only when you want it:</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">kmpLens</span> <span class="p">{</span>
+    <span class="n">enabled</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
 
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">kmpArchitectureAnalysis</span> <span class="p">{</span>
     <span class="nf">sourceObservation</span> <span class="p">{</span>
         <span class="n">enabled</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nf">reporting</span> <span class="p">{</span>
+        <span class="n">directory</span><span class="p">.</span><span class="k">set</span><span class="p">(</span>
+            <span class="n">layout</span><span class="p">.</span><span class="n">buildDirectory</span><span class="p">.</span><span class="nf">dir</span><span class="p">(</span><span class="s">"reports/kmp-lens"</span><span class="p">)</span>
+        <span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>KMP Lens reads authorized local Kotlin source during the build and does not
-upload it. The report only displays source when an exact attachment is
-established.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th style="text-align: right">Default</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enabled</code></td>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>Enables or disables KMP Lens for the project.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sourceObservation.enabled</code></td>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">false</code></td>
+      <td>Adds qualified local Kotlin source correlation.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reporting.directory</code></td>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">build/reports/kmp-lens</code></td>
+      <td>Changes where the developer report is written.</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Without this option, the report remains fully usable and simply omits source
-sections.</p>
+<h2 id="automatic-build-observation">Automatic build observation</h2>
+
+<p>KMP Lens uses the Kotlin/Native and transformation information available during
+the build. When optional information is unavailable, analysis continues and the
+report explains what remains unknown.</p>
+
+<h2 id="source-off-and-source-on">SOURCE OFF and SOURCE ON</h2>
+
+<p>SOURCE OFF analyzes build, Kotlin-library identity, Origin, dependency paths and
+Apple symbols without reading project source roots for correlation. SOURCE ON
+adds local structural source observation.</p>
+
+<h2 id="select-one-apple-slice">Select one Apple slice</h2>
+
+<p>A report observes exactly one Apple product and one slice. If the authoritative
+build context identifies a unique product and slice, no selector is required.
+For a product with several eligible slices, KMP Lens requires a typed selection:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">io.github.kmplabs.kmplens.AppleTarget</span>
+<span class="k">import</span> <span class="nn">io.github.kmplabs.kmplens.AppleBuildType</span>
+
+<span class="nf">kmpLens</span> <span class="p">{</span>
+    <span class="nf">slice</span><span class="p">(</span><span class="nc">AppleTarget</span><span class="p">.</span><span class="nc">IOS_SIMULATOR_ARM64</span><span class="p">,</span> <span class="nc">AppleBuildType</span><span class="p">.</span><span class="nc">DEBUG</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Supported target values are <code class="language-plaintext highlighter-rouge">IOS_ARM64</code>, <code class="language-plaintext highlighter-rouge">IOS_SIMULATOR_ARM64</code>, and <code class="language-plaintext highlighter-rouge">MACOS_ARM64</code>;
+build types are <code class="language-plaintext highlighter-rouge">DEBUG</code> and <code class="language-plaintext highlighter-rouge">RELEASE</code>. The selected pair must identify an actual
+KGP Framework. It does not create a target or change the build type.</p>
+
+<p>An XCFramework is a distribution containing slices, not a merged analysis input.
+Multiple independent products or multiple binaries matching the same typed pair
+fail explicitly. KMP Lens has no free-text product selector.</p>
 
     </main>
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
           <strong>KMP Lens</strong>
-          <p>Built by KMPLabs.</p>
+          <p>Proprietary software. Copyright © 2026 KMPLabs. All rights reserved.</p>
         </div>
+        <nav aria-label="Footer navigation">
+          <a href="/kmp-lens-docs/privacy/">Privacy</a>
+          <a href="/kmp-lens-docs/license/">License</a>
+          <a href="/kmp-lens-docs/configuration/">Configuration</a>
+          <a href="/kmp-lens-docs/ci/">CI</a>
+          <a href="/kmp-lens-docs/generated-symbols/">Generated symbols</a>
+          <a href="/kmp-lens-docs/support/">Support</a>
+          <a href="/kmp-lens-docs/changelog/">Changelog</a>
+          <a href="/kmp-lens-docs/release-lifecycle/">Release lifecycle</a>
+        </nav>
       </div>
     </footer>
   </body>

@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="Proprietary status of the distributed plugin and public documentation.">
-    <meta property="og:title" content="License">
-    <meta property="og:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="description" content="What KMP Lens reads, writes, and does not transmit during a Gradle build.">
+    <meta property="og:title" content="Privacy">
+    <meta property="og:description" content="What KMP Lens reads, writes, and does not transmit during a Gradle build.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/privacy/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="License">
-    <meta name="twitter:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="twitter:title" content="Privacy">
+    <meta name="twitter:description" content="What KMP Lens reads, writes, and does not transmit during a Gradle build.">
     <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <title>License · KMP Lens</title>
-    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <title>Privacy · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/privacy/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
@@ -42,19 +42,28 @@
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Proprietary software</p>
-      <h1 id="license">License</h1>
+      <p class="eyebrow">Runtime behavior</p>
+      <h1 id="privacy">Privacy</h1>
 
-<p>KMP Lens is proprietary software.</p>
+<p>The local HTML report can show explicitly enabled, redacted source excerpts;
+treat archived reports with the same access controls as the repository they
+describe.</p>
 
-<p>All rights reserved.</p>
+<p>KMP Lens runs locally as part of the Gradle build. It does not send project source code, build artifacts, analysis reports, or telemetry to the publisher.</p>
 
-<p>No open-source license has been granted for the KMP Lens implementation or distributed plugin.</p>
+<h2 id="local-inputs-and-outputs">Local inputs and outputs</h2>
 
-<p>Documentation-site content is also all rights reserved.</p>
+<p>KMP Lens observes local Gradle model data and build artifacts required for analysis. With SOURCE OFF, it does not scan project source roots for source correlation. With SOURCE ON, it reads authorized local Kotlin source roots to establish qualified source correspondence.</p>
 
-<p>The public Maven metadata identifies the license as <code class="language-plaintext highlighter-rouge">Proprietary</code>. For product
-or licensing questions, see <a href="/kmp-lens-docs/support/">Support</a>.</p>
+<p>The HTML report is written to the configured local report directory. It can
+include project identifiers, dependency information, artifact identities,
+paths and—when SOURCE ON is enabled—local source locations. Treat it as a
+project build artifact and apply your organization’s retention and sharing
+policy.</p>
+
+<h2 id="scope-of-this-statement">Scope of this statement</h2>
+
+<p>Gradle may access repositories configured by the project to resolve plugins and dependencies. Compilers, plugins, and other build tools may have their own behavior and policies. This statement concerns KMP Lens’s runtime behavior.</p>
 
     </main>
     <footer class="site-footer">

@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="Proprietary status of the distributed plugin and public documentation.">
-    <meta property="og:title" content="License">
-    <meta property="og:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="description" content="See how supported integrations report downstream changes without changing native declaration knowledge.">
+    <meta property="og:title" content="Transformation compilers">
+    <meta property="og:description" content="See how supported integrations report downstream changes without changing native declaration knowledge.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/transformations/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="License">
-    <meta name="twitter:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="twitter:title" content="Transformation compilers">
+    <meta name="twitter:description" content="See how supported integrations report downstream changes without changing native declaration knowledge.">
     <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <title>License · KMP Lens</title>
-    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <title>Transformation compilers · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/transformations/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
@@ -42,19 +42,37 @@
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Proprietary software</p>
-      <h1 id="license">License</h1>
+      <p class="eyebrow">Observable downstream impact</p>
+      <h1 id="transformation-compilers">Transformation compilers</h1>
 
-<p>KMP Lens is proprietary software.</p>
+<p>KMP Lens separates detailed Kotlin/Native declaration analysis from downstream transformation reporting.</p>
 
-<p>All rights reserved.</p>
+<div class="flow">Kotlin/Native Objective-C surface
+      ↓
+Downstream transformation
+      ↓
+Published Objective-C surface + generated files</div>
 
-<p>No open-source license has been granted for the KMP Lens implementation or distributed plugin.</p>
+<h2 id="what-the-report-shows">What the report shows</h2>
 
-<p>Documentation-site content is also all rights reserved.</p>
+<p>A supported integration can report:</p>
 
-<p>The public Maven metadata identifies the license as <code class="language-plaintext highlighter-rouge">Proprietary</code>. For product
-or licensing questions, see <a href="/kmp-lens-docs/support/">Support</a>.</p>
+<ul>
+  <li>transformer detection and version;</li>
+  <li>supported or unsupported status;</li>
+  <li>affected build scope;</li>
+  <li>relevant input and output artifacts;</li>
+  <li>before/after sizes when directly comparable;</li>
+  <li>generated artifact inventory and measured footprint.</li>
+</ul>
+
+<h2 id="native-knowledge-remains-intact">Native knowledge remains intact</h2>
+
+<p>A transformation does not change information already established about the
+native Kotlin/Native surface. Its section explains what changed afterward.</p>
+
+<p>If the integration cannot observe a detected transformer version, the report
+identifies that limitation and keeps its footprint unknown.</p>
 
     </main>
     <footer class="site-footer">

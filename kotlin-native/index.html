@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="Proprietary status of the distributed plugin and public documentation.">
-    <meta property="og:title" content="License">
-    <meta property="og:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="description" content="Understand the Apple symbols KMP Lens can explain from a Kotlin/Native framework build.">
+    <meta property="og:title" content="Kotlin/Native analysis">
+    <meta property="og:description" content="Understand the Apple symbols KMP Lens can explain from a Kotlin/Native framework build.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/kotlin-native/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="License">
-    <meta name="twitter:description" content="Proprietary status of the distributed plugin and public documentation.">
+    <meta name="twitter:title" content="Kotlin/Native analysis">
+    <meta name="twitter:description" content="Understand the Apple symbols KMP Lens can explain from a Kotlin/Native framework build.">
     <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <title>License · KMP Lens</title>
-    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/license/">
+    <title>Kotlin/Native analysis · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/kotlin-native/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
@@ -42,19 +42,32 @@
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Proprietary software</p>
-      <h1 id="license">License</h1>
+      <p class="eyebrow">KMP Lens 0.1 Apple API boundary</p>
+      <h1 id="kotlinnative-analysis">Kotlin/Native analysis</h1>
 
-<p>KMP Lens is proprietary software.</p>
+<p>KMP Lens 0.1 analyzes the Apple API observed in the framework produced by the current
+Kotlin/Native build.</p>
 
-<p>All rights reserved.</p>
+<p>For an exact Apple symbol, the report may establish:</p>
 
-<p>No open-source license has been granted for the KMP Lens implementation or distributed plugin.</p>
+<ul>
+  <li>its Objective-C declaration and container;</li>
+  <li>its Kotlin library identity;</li>
+  <li>an Origin such as a local module, Maven component or Kotlin standard library;</li>
+  <li>dependency paths from the framework producer to that Origin;</li>
+  <li>a qualified generator for a generated Apple form;</li>
+  <li>local Kotlin source correspondence when SOURCE ON is enabled.</li>
+</ul>
 
-<p>Documentation-site content is also all rights reserved.</p>
+<h2 id="when-one-answer-cannot-be-established">When one answer cannot be established</h2>
 
-<p>The public Maven metadata identifies the license as <code class="language-plaintext highlighter-rouge">Proprietary</code>. For product
-or licensing questions, see <a href="/kmp-lens-docs/support/">Support</a>.</p>
+<p>KMP Lens keeps multiple candidates visible rather than selecting one by name.
+If an applicable answer is still not established, the report says so. A missing
+answer is not a build failure, and an unverified toolchain remains allowed to
+run on a best-effort basis.</p>
+
+<p>Kotlin/Native runtime support, Kotlin standard-library Origin and application
+Origin are different concepts. See <a href="/kmp-lens-docs/generated-symbols/">Generated symbols</a> and <a href="/kmp-lens-docs/understanding-the-report/">Understanding the report</a>.</p>
 
     </main>
     <footer class="site-footer">

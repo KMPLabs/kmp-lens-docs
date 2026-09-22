@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="description" content="Choose producer-module or root placement and find the resulting report.">
+    <meta property="og:title" content="Applying KMP Lens">
+    <meta property="og:description" content="Choose producer-module or root placement and find the resulting report.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/applying-analyzer/">
+    <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Applying KMP Lens">
+    <meta name="twitter:description" content="Choose producer-module or root placement and find the resulting report.">
+    <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
+    <title>Applying KMP Lens · KMP Lens</title>
+    <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/applying-analyzer/">
+    <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=official-v1">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell masthead">
+        <a class="brand" href="/kmp-lens-docs/" aria-label="KMP Lens home">
+          <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
+          <span>KMP Lens</span>
+        </a>
+        <span class="release-badge">0.1.0-rc.4 · Released</span>
+      </div>
+      <nav class="shell nav" aria-label="Primary navigation">
+        <a href="/kmp-lens-docs/">Overview</a>
+        <a href="/kmp-lens-docs/getting-started/">Get started</a>
+        <a href="/kmp-lens-docs/understanding-the-report/">Understanding the report</a>
+        <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+        <a href="/kmp-lens-docs/limitations/">Known limitations</a>
+      </nav>
+    </header>
+    <main id="main" class="shell content">
+      <p class="eyebrow">Placement and discovery</p>
+      <h1 id="applying-kmp-lens">Applying KMP Lens</h1>
+
+<p>KMP Lens is a passive Gradle plugin. It observes the normal build task that
+produces an Apple framework; it does not introduce a replacement build flow.</p>
+
+<h2 id="apply-it-to-the-producer-when-known">Apply it to the producer when known</h2>
+
+<p>For a module that directly produces the framework, use the KMP Lens plugin ID
+<code class="language-plaintext highlighter-rouge">io.github.kmplabs.kmp-lens</code> with version <code class="language-plaintext highlighter-rouge">0.1.0-rc.4</code>, available from Maven
+Central.</p>
+
+<p>Run that module’s normal Apple link task or the project lifecycle you already
+use. The report identifies the framework, target and producer observed in that
+run.</p>
+
+<h2 id="apply-it-at-the-root-when-discovering-the-build">Apply it at the root when discovering the build</h2>
+
+<p>Root placement is useful when the framework producer is not yet obvious. The
+report distinguishes:</p>
+
+<ul>
+  <li><strong>Plugin host</strong> — the Gradle project where KMP Lens is applied;</li>
+  <li><strong>Producer</strong> — the Gradle project that produced the observed Apple framework.</li>
+</ul>
+
+<p>When both are the same, the report keeps the presentation compact. When they
+differ, both roles are visible. Root placement authorizes build observation; it
+does not imply a scan of every repository file.</p>
+
+<h2 id="where-the-report-is-written">Where the report is written</h2>
+
+<p>By default:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/reports/kmp-lens/&lt;target&gt;-&lt;buildType&gt;/kmp-lens-report.html
+</code></pre></div></div>
+
+<p>The path is relative to the project where KMP Lens is applied. A custom
+location can be set with <a href="/kmp-lens-docs/configuration/"><code class="language-plaintext highlighter-rouge">reporting.directory</code></a>. For Apple reports this configures the root: the resolved
+target/build-type directory is always appended. Use the <code class="language-plaintext highlighter-rouge">KMP Lens report:</code> path
+printed after successful build completion, rather than constructing the path.</p>
+
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>KMP Lens</strong>
+          <p>Proprietary software. Copyright © 2026 KMPLabs. All rights reserved.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="/kmp-lens-docs/privacy/">Privacy</a>
+          <a href="/kmp-lens-docs/license/">License</a>
+          <a href="/kmp-lens-docs/configuration/">Configuration</a>
+          <a href="/kmp-lens-docs/ci/">CI</a>
+          <a href="/kmp-lens-docs/generated-symbols/">Generated symbols</a>
+          <a href="/kmp-lens-docs/support/">Support</a>
+          <a href="/kmp-lens-docs/changelog/">Changelog</a>
+          <a href="/kmp-lens-docs/release-lifecycle/">Release lifecycle</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

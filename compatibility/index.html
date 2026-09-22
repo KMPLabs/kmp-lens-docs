@@ -4,20 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="How KMP Lens reports compatibility for the build it observed.">
+    <meta name="description" content="Exact qualified configurations and the best-effort behavior of every other profile.">
     <meta property="og:title" content="Compatibility">
-    <meta property="og:description" content="How KMP Lens reports compatibility for the build it observed.">
+    <meta property="og:description" content="Exact qualified configurations and the best-effort behavior of every other profile.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/compatibility/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <meta property="og:image:alt" content="KMP Lens">
+    <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Compatibility">
+    <meta name="twitter:description" content="Exact qualified configurations and the best-effort behavior of every other profile.">
+    <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <title>Compatibility · KMP Lens</title>
     <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/compatibility/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="/kmp-lens-docs/assets/brand/apple-touch-icon.png">
-    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=rc-preview">
+    <link rel="stylesheet" href="/kmp-lens-docs/assets/style.css?v=official-v1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -27,45 +31,298 @@
           <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
           <span>KMP Lens</span>
         </a>
-        <span class="release-badge">0.1.0-RC.3 · available</span>
+        <span class="release-badge">0.1.0-rc.4 · Released</span>
       </div>
       <nav class="shell nav" aria-label="Primary navigation">
-        <a href="/kmp-lens-docs/">Home</a>
-        <a href="/kmp-lens-docs/getting-started/">Getting Started</a>
-        <a href="/kmp-lens-docs/configuration/">Configuration</a>
-        <a href="/kmp-lens-docs/troubleshooting/">Troubleshooting</a>
+        <a href="/kmp-lens-docs/">Overview</a>
+        <a href="/kmp-lens-docs/getting-started/">Get started</a>
+        <a href="/kmp-lens-docs/understanding-the-report/">Understanding the report</a>
         <a href="/kmp-lens-docs/compatibility/">Compatibility</a>
+        <a href="/kmp-lens-docs/limitations/">Known limitations</a>
       </nav>
     </header>
     <main id="main" class="shell content">
-      <p class="eyebrow">Current run authority</p>
+      <p class="eyebrow">Exact profiles, not version ranges</p>
       <h1 id="compatibility">Compatibility</h1>
 
-<p>KMP Lens is qualified against specific Gradle, Kotlin and Kotlin Gradle Plugin
-profiles for Kotlin Multiplatform projects that produce an Apple framework.</p>
+<p>KMP Lens reports observation and compatibility by <strong>knowledge family</strong>. It does not collapse
+Kotlin, Kotlin/Native, Gradle, Apple targets and optional integrations into one
+global pass/fail verdict.</p>
 
-<p>KMP Lens evaluates compatibility from the exact toolchain and build information
-observed in the current run. The report’s Compatibility block is the authority
-for that run.</p>
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Observed</strong></td>
+      <td>KMP Lens acquired this family’s input in the current run. This is not by itself a compatibility claim.</td>
+    </tr>
+    <tr>
+      <td><strong>Not observed</strong></td>
+      <td>The required input was absent from this run. This is not a version verdict.</td>
+    </tr>
+    <tr>
+      <td><strong>Qualified</strong></td>
+      <td>This exact family profile was exercised.</td>
+    </tr>
+    <tr>
+      <td><strong>Unverified / best effort</strong></td>
+      <td>KMP Lens continues, but makes no compatibility promise for this exact profile.</td>
+    </tr>
+    <tr>
+      <td><strong>Not active</strong></td>
+      <td>The optional integration was not present in this run.</td>
+    </tr>
+    <tr>
+      <td><strong>Out of scope</strong></td>
+      <td>That knowledge family does not apply to the observed product.</td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li><strong>Qualified</strong> means the displayed family and exact profile were exercised.</li>
-  <li><strong>Unverified</strong> means analysis continues on a best-effort basis without a
-compatibility promise for that exact profile.</li>
-  <li><strong>Not active</strong> means an optional input was not present.</li>
-</ul>
+<p>An unverified family does not erase independently qualified answers. Missing
+facts remain missing; KMP Lens does not invent them to make a profile appear
+compatible.</p>
 
-<p>These states do not form a continuous version range. An unverified family does
-not erase independently established results, and KMP Lens does not invent
-missing information.</p>
+<h2 id="complete-profiles-exercised-end-to-end">Complete profiles exercised end to end</h2>
+
+<p>At these exact points, all listed knowledge families were exercised together.
+They remain useful integration controls, but are not one global compatibility
+authority and do not create continuous Kotlin or Gradle ranges.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>KGP</th>
+      <th>Effective compiler</th>
+      <th>Kotlin/Native</th>
+      <th>Gradle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2.4.10</td>
+      <td>2.4.10</td>
+      <td>2.4.10</td>
+      <td>9.5.0</td>
+    </tr>
+    <tr>
+      <td>2.4.10</td>
+      <td>2.4.10</td>
+      <td>2.4.10</td>
+      <td>9.3.0</td>
+    </tr>
+    <tr>
+      <td>2.3.21</td>
+      <td>2.3.21</td>
+      <td>2.3.21</td>
+      <td>9.3.0</td>
+    </tr>
+    <tr>
+      <td>2.3.21</td>
+      <td>2.3.21</td>
+      <td>2.3.21</td>
+      <td>9.1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Individual knowledge families are also qualified on additional exact authority
+points. This does not create a continuous support range.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exact profile</th>
+      <th>Framework and Apple header</th>
+      <th>Gradle graph</th>
+      <th>Stock declaration relation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kotlin/KGP/Native 2.0.21 · Gradle 8.5</td>
+      <td><strong>Qualified</strong></td>
+      <td><strong>Qualified</strong></td>
+      <td><strong>Not active</strong> — the required selector observation is not exposed by this compiler</td>
+    </tr>
+    <tr>
+      <td>Kotlin/KGP/Native 2.1.20 · Gradle 8.11.1</td>
+      <td><strong>Qualified</strong></td>
+      <td><strong>Qualified</strong></td>
+      <td><strong>Not active</strong> — the required selector observation is not exposed by this compiler</td>
+    </tr>
+    <tr>
+      <td>Kotlin/KGP/Native 2.2.20 · Gradle 8.5, 8.9 or 8.14</td>
+      <td><strong>Qualified at each listed point</strong></td>
+      <td><strong>Qualified at each listed point</strong></td>
+      <td><strong>Not active</strong> — the required selector observation is not exposed by this compiler</td>
+    </tr>
+    <tr>
+      <td>Kotlin/KGP/Native 2.3.21 · Gradle 9.3.0</td>
+      <td><strong>Qualified</strong></td>
+      <td><strong>Qualified</strong></td>
+      <td><strong>Qualified exact profile</strong></td>
+    </tr>
+    <tr>
+      <td>Kotlin/KGP/Native 2.4.10 · Gradle 9.1.0, 9.3.0 or 9.5.0</td>
+      <td><strong>Qualified at each listed point</strong></td>
+      <td><strong>Qualified at each listed point</strong></td>
+      <td><strong>Qualified at each listed point</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>“Not active” is not “unsupported”. KMP Lens still reports the framework,
+published Apple header and Gradle architecture facts that it can observe; it
+does not invent the missing KLIB-to-Apple relation. A complete Kotlin/Native
+profile can remain unverified even when its independently qualified Gradle graph
+is observed correctly.</p>
+
+<h2 id="qualification-by-knowledge-family">Qualification by knowledge family</h2>
+
+<p>This matrix is factorized. Each row states its own exact scope; it does not
+claim that every cross-product of the rows was executed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Knowledge family</th>
+      <th>Kotlin / Native scope</th>
+      <th>Gradle scope</th>
+      <th>Target</th>
+      <th>Optional plugin scope</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Framework and final Apple header</td>
+      <td>exact <code class="language-plaintext highlighter-rouge">2.0.21</code>, <code class="language-plaintext highlighter-rouge">2.1.20</code>, <code class="language-plaintext highlighter-rouge">2.2.20</code>, <code class="language-plaintext highlighter-rouge">2.3.21</code>, <code class="language-plaintext highlighter-rouge">2.4.10</code> cells above</td>
+      <td>the matching exact Gradle cells above</td>
+      <td><code class="language-plaintext highlighter-rouge">iosSimulatorArm64</code></td>
+      <td>none</td>
+      <td>Framework and final header observed; this does not imply a declaration relation.</td>
+    </tr>
+    <tr>
+      <td>Gradle graph, provider inputs and paths</td>
+      <td>Kotlin/KGP is an independent graph input, not graph-observer authority</td>
+      <td>exact Gradle authorities <code class="language-plaintext highlighter-rouge">8.5</code>, <code class="language-plaintext highlighter-rouge">8.9</code>, <code class="language-plaintext highlighter-rouge">8.11.1</code>, <code class="language-plaintext highlighter-rouge">8.14</code>, <code class="language-plaintext highlighter-rouge">9.1.0</code>, <code class="language-plaintext highlighter-rouge">9.3.0</code>, <code class="language-plaintext highlighter-rouge">9.5.0</code>, <code class="language-plaintext highlighter-rouge">9.6.1</code>, <code class="language-plaintext highlighter-rouge">9.7.0</code>, <code class="language-plaintext highlighter-rouge">9.7.1</code></td>
+      <td>producer and selected root-host controls</td>
+      <td>none</td>
+      <td>Each listed version is an exact point, not an interval. KGP may legitimately change graph content. Graph facts never reconstruct source or Apple export causality.</td>
+    </tr>
+    <tr>
+      <td>Stock declaration relation</td>
+      <td>exact qualified KGP/effective compiler/Kotlin/Native profiles for <code class="language-plaintext highlighter-rouge">2.3.21</code> and <code class="language-plaintext highlighter-rouge">2.4.10</code></td>
+      <td>independent; provider/path facts retain their separate Gradle graph authority</td>
+      <td><code class="language-plaintext highlighter-rouge">iosSimulatorArm64</code> debug framework</td>
+      <td>none</td>
+      <td>Exact Native relation authorities only. On earlier tested compilers this family is not active.</td>
+    </tr>
+    <tr>
+      <td>Local Kotlin source attachment</td>
+      <td>SOURCE ON cells in the representative matrix</td>
+      <td>matching exact cells</td>
+      <td><code class="language-plaintext highlighter-rouge">iosSimulatorArm64</code></td>
+      <td>none</td>
+      <td>Source is attached only after an exact symbol relation exists. SOURCE OFF omits it.</td>
+    </tr>
+    <tr>
+      <td>SKIE generated suspend wrappers</td>
+      <td>exact Kotlin/KGP/Native <code class="language-plaintext highlighter-rouge">2.4.10</code></td>
+      <td>independently confronted profile</td>
+      <td><code class="language-plaintext highlighter-rouge">iosSimulatorArm64</code></td>
+      <td>SKIE <code class="language-plaintext highlighter-rouge">0.10.14</code></td>
+      <td>Other SKIE versions and targets remain unverified.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Matching version strings alone do not guarantee that two compiler distributions expose the same observable build
+facts, so the report records compiler and Kotlin/Native identities separately
+when they are available.</p>
+
+<h2 id="qualified-apple-targets">Qualified Apple targets</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Apple target</th>
+      <th>Status</th>
+      <th>Scope</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">iosArm64</code></td>
+      <td><strong>Qualified</strong></td>
+      <td>Existing KMP Lens 0.1 Apple-target coverage.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">iosSimulatorArm64</code></td>
+      <td><strong>Qualified</strong></td>
+      <td>Existing KMP Lens 0.1 simulator coverage.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">macosArm64</code></td>
+      <td><strong>Qualified — exact cell</strong></td>
+      <td>macOS Apple Silicon host; KGP/compiler/Kotlin/Native 2.4.10; Gradle 9.5.0.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">macosX64</code></td>
+      <td><strong>Unverified</strong></td>
+      <td>Not exercised by the macOS ARM64 campaign.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This table does not mean that every host, architecture or toolchain combination
+for those targets is qualified.</p>
+
+<h2 id="qualified-skie-contribution">Qualified SKIE contribution</h2>
+
+<p>SKIE-generated suspend-wrapper forms are qualified for SKIE 0.10.14 with
+Kotlin/KGP/Kotlin/Native 2.4.10 on <code class="language-plaintext highlighter-rouge">iosSimulatorArm64</code>. Other SKIE versions or
+Apple targets remain unverified; their presence is not treated as an
+incompatibility.</p>
+
+<h2 id="unverified-configurations">Unverified configurations</h2>
+
+<p>Any family whose required authority does not exactly match a qualified point is
+<strong>Unverified / best effort</strong>, not unsupported. KMP Lens continues and reports
+the facts available in that run. This includes older and future versions,
+KGP/compiler decoupling, unregistered Gradle versions and Kotlin 2.5 development
+canaries. An unrelated version does not invalidate an independently qualified
+family.</p>
+
+<h2 id="known-incompatibilities">Known incompatibilities</h2>
+
+<p>None are currently published. A profile belongs here only after an exact
+incompatibility is reproduced and documented. Absence from the qualified tables
+is not an incompatibility.</p>
 
     </main>
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
           <strong>KMP Lens</strong>
-          <p>Built by KMPLabs.</p>
+          <p>Proprietary software. Copyright © 2026 KMPLabs. All rights reserved.</p>
         </div>
+        <nav aria-label="Footer navigation">
+          <a href="/kmp-lens-docs/privacy/">Privacy</a>
+          <a href="/kmp-lens-docs/license/">License</a>
+          <a href="/kmp-lens-docs/configuration/">Configuration</a>
+          <a href="/kmp-lens-docs/ci/">CI</a>
+          <a href="/kmp-lens-docs/generated-symbols/">Generated symbols</a>
+          <a href="/kmp-lens-docs/support/">Support</a>
+          <a href="/kmp-lens-docs/changelog/">Changelog</a>
+          <a href="/kmp-lens-docs/release-lifecycle/">Release lifecycle</a>
+        </nav>
       </div>
     </footer>
   </body>
