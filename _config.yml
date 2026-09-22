@@ -1,9 +1,9 @@
 title: KMP Lens
-description: Open the Apple API report produced by your Kotlin Multiplatform build.
+description: Developer-focused Gradle build analysis for Kotlin Multiplatform projects targeting Apple platforms.
 url: "https://kmplabs.github.io"
 baseurl: "/kmp-lens-docs"
-product_version: "0.1.0-RC.3"
-release_status: "available"
+product_version: "0.1.0-rc.4"
+release_status: "released"
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
@@ -16,4 +16,3 @@ exclude:
   - .bundle
   - .jekyll-cache
   - .gitignore
-  - scripts
