@@ -1,0 +1,307 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0F172A"><title>KMP Lens</title><link rel="icon" href="kmp-lens-report/assets/kmp-lens-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="kmp-lens-report/assets/v1.css"></head><body>
+<header class="topbar"><a class="brand" href="#overview"><img src="kmp-lens-report/assets/kmp-lens-logo.svg" alt=""><span>KMP Lens</span></a><nav class="report-tabs" aria-label="Report sections"><a href="#overview" aria-current="page">Overview</a><a href="#run-summary">Run Summary</a><a href="#module-structure">Dependencies</a><a href="#published-api">Investigate</a></nav></header>
+<main id="overview">
+<section class="hero" aria-labelledby="report-title"><div class="hero-copy">
+<div class="report-identity"><img src="kmp-lens-report/assets/kmp-lens-logo.svg" alt="KMP Lens"><div><strong>KMP Lens</strong><span>Generated report</span></div></div>
+<p class="eyebrow">01 / Overview · Observed build report</p><h1 id="report-title">KmpLensShowcase</h1>
+<p class="lede">What this build exposes to Apple, where it came from, and what KMP Lens could not determine.</p>
+<dl class="build-identity"><dt>Project</dt><dd>kmp-lens-showcase</dd><dt>Producer</dt><dd>:showcase</dd><dt>Framework</dt><dd>KmpLensShowcase</dd><dt>Target</dt><dd>iosSimulatorArm64</dd><dt>Task</dt><dd>:showcase:linkDebugFrameworkIosSimulatorArm64</dd><dt>KGP product</dt><dd>:showcase|FRAMEWORK|</dd><dt>Build type</dt><dd>DEBUG</dd><dt>Report scope</dt><dd>iosSimulatorArm64-debug</dd></dl>
+<div class="hero-actions"><a class="button primary" href="#published-api">Explore 2175 Apple symbols</a><a class="button" href="#module-structure">Explore architecture</a></div></div>
+<div class="hero-status"><article class="run-identity"><span>Version</span><strong>0.1.0-rc.4</strong><small>Revision c3ce95875fe2</small></article><article class="run-identity"><span>Generated</span><strong>25 Sep 2026 · 13:03 +02:00</strong></article><article class="status-summary completed"><span>Analysis</span><strong>Completed</strong></article>
+<article class="status-summary source-mode on"><span>Source observation</span><strong>On</strong></article>
+<article class="status-summary toolchain-qualification unverified" id="toolchain-qualification">
+  <span>Compatibility</span><strong>Partially qualified</strong>
+  <small class="toolchain-version-line">Kotlin 2.2.21 · Kotlin/Native 2.2.21 · Gradle 9.6.1</small>
+  <div class="compatibility-families"><div class="compatibility-family unverified"><span>Kotlin/Native</span><span>Observed · Unverified</span></div><div class="compatibility-family unverified"><span>Apple type selection</span><span>Observed · Unverified</span></div><div class="compatibility-family qualified"><span>Gradle graph</span><span>Observed · Qualified</span></div><div class="compatibility-family active"><span>Source</span><span>Active</span></div><div class="compatibility-family not-observed"><span>SKIE</span><span>Not observed</span></div></div>
+  <a class="compatibility-link" href="https://KMPLabs.github.io/kmp-lens-docs/compatibility/">Compatibility documentation</a>
+</article>
+<article class="run-context performance-summary report-runtime" data-operational-metric="observed-analyzer-task-duration"><span>Analysis duration</span><strong>23.41 s</strong><p>KMP Lens task duration, not total Gradle build time.</p></article></div></section>
+<section id="run-summary" class="section executive-summary"><div class="section-heading"><p class="kicker">02 / Run Summary</p><h2>What this analysis established</h2><p>What KMP Lens found in this Apple framework.</p></div>
+<div class="coverage-grid"><article class="coverage-card population-entry"><a href="?investigateView=groups#published-api" aria-label="Explore Apple symbols (2175)"><span>Apple symbols</span><strong>2175</strong><small>Explore</small></a></article><article class="coverage-card population-entry"><a href="?investigatePopulation=exact-origin#published-api" aria-label="Explore Exact origin (1543)"><span>Exact origin</span><strong>1543</strong><small>Explore</small></a></article><article class="coverage-card population-entry"><a href="?investigatePopulation=generated-support#published-api" aria-label="Explore Generated support (573)"><span>Generated support</span><strong>573</strong><small>Explore</small></a></article><article class="coverage-card population-entry"><a href="?investigatePopulation=context-only#published-api" aria-label="Explore Context only (57)"><span>Context only</span><strong>57</strong><small>Explore</small></a></article><article class="coverage-card population-entry"><a href="?investigatePopulation=not-established#published-api" aria-label="Explore Not established (2)"><span>Not established</span><strong>2</strong><small>Explore</small></a></article></div><div class="run-context-grid"><article class="run-context"><span>Architecture</span>
+<strong>2 direct local project dependencies · 2 direct Maven dependencies</strong>
+<a href="#module-structure">Explore architecture</a></article>
+</div></section>
+<style>.transformation-impact{margin-top:64px;padding:38px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface)}.transformation-impact .impact-title{display:flex;justify-content:space-between;gap:20px;align-items:start}.transformation-impact .impact-title>div{min-width:0}.transformation-impact .impact-title h2{margin:0;color:var(--lens-navy);font-size:clamp(2rem,4vw,3.8rem);line-height:1}.transformation-impact .status-pill{flex:0 0 auto;padding:6px 10px;border-radius:var(--radius-sm);background:var(--info-bg);color:var(--lens-navy);font-weight:900}.transformation-impact .status-pill.unsupported{background:var(--surface-muted);color:var(--text-muted)}.impact-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:24px;background:var(--border);border:1px solid var(--border)}.impact-facts article{display:flex;min-height:118px;flex-direction:column;padding:16px;background:white}.impact-facts span{color:var(--text-muted);font-size:.72rem;font-weight:800;text-transform:uppercase}.impact-facts strong{margin:auto 0;font-family:monospace;overflow-wrap:anywhere}.transformation-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:24px 0;padding:18px;border-radius:var(--radius-md);background:var(--lens-navy);color:white}.transformation-flow b{color:var(--lens-blue)}.impact-comparison{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.impact-comparison article{padding:16px;border:1px solid var(--border);border-radius:var(--radius-md)}.impact-comparison strong{display:block;font-size:1.35rem}.transformation-impact details{margin-top:18px;padding-top:14px;border-top:1px solid var(--border)}.transformation-impact details code{overflow-wrap:anywhere;word-break:break-word}.transformation-impact summary span{color:var(--text-muted);font-size:.78rem;font-weight:500}.transformation-inventory{display:grid;gap:8px;margin-top:14px}.transformation-artifact{padding:12px;border:1px solid var(--border);border-radius:var(--radius-md);background:white}.transformation-artifact dl{display:grid;grid-template-columns:170px 1fr;gap:5px 12px}.transformation-artifact dt{color:var(--text-muted);font-weight:800}.transformation-artifact dd{min-width:0;margin:0;overflow-wrap:anywhere}.transformation-boundary{padding:14px;border-left:5px solid var(--warning);background:var(--warning-bg)}@media(max-width:900px){.impact-facts{grid-template-columns:repeat(2,1fr)}.impact-comparison{grid-template-columns:1fr}}@media(max-width:560px){.transformation-impact{padding:22px 15px}.transformation-impact .impact-title{flex-direction:column}.impact-facts{grid-template-columns:1fr}.transformation-artifact dl{grid-template-columns:1fr}}</style><section id="module-structure" class="section dependencies-section"><div class="section-heading"><p class="kicker">03 / Dependencies</p><h2>Direct dependencies</h2><p>Dependencies directly observed from :showcase.</p></div>
+<div class="dependency-groups">
+<article class="dependency-group local-dependencies"><header><h3>Direct local project dependencies</h3><strong>2</strong></header>
+<div class="dependency-list">
+<div class="dependency-row local"><code>:contracts</code></div>
+<div class="dependency-row local"><code>:payments</code></div>
+</div>
+</article>
+<article class="dependency-group maven-dependencies"><header><h3>Direct Maven dependencies</h3><strong>2</strong></header>
+<div class="dependency-list">
+<div class="dependency-row maven-visible"><code>app.cash.sqldelight:runtime</code><span>2.1.0</span></div>
+<div class="dependency-row maven-visible"><code>org.jetbrains.kotlin:kotlin-stdlib</code><span>2.2.21</span></div>
+</div>
+</article></div></section>
+<section id="published-api" class="section explorer"><div class="section-heading"><p class="kicker">04 / Investigate</p><h2>Investigate</h2><p>Start with an architectural population, narrow by provenance, or search directly for a known Apple symbol.</p></div><article class="apple-header-entry"><div class="apple-header-copy"><span class="apple-header-label">Final Apple header</span><strong class="apple-header-filename">KmpLensShowcase.h</strong><small class="apple-header-context">KmpLensShowcase.framework · iosSimulatorArm64</small></div><a class="button primary apple-header-action" href="kmp-lens-report/final-apple-header.html" target="_blank" rel="noopener">Open header ↗</a></article><div class="filters" role="search"><label class="search-field"><span>Search Apple symbol</span><input id="investigate-search" type="search" placeholder="DeliveryGateway"></label><label><span>Population</span><select id="investigate-population"><option value="">All Apple symbols</option><option value="exact-origin">Origins established</option><option value="generated-support">Generated support</option><option value="context-only">Context only</option><option value="not-established">Not established</option></select></label><label><span>Direct dependency</span><select id="direct-dependency-filter"><option value="">All direct dependencies</option><option value=":contracts">:contracts</option><option value=":payments">:payments</option><option value="app.cash.sqldelight:runtime:2.1.0">app.cash.sqldelight:runtime:2.1.0</option></select></label><button id="clear-investigate" type="button">Clear</button></div><p id="investigate-search-scope" class="investigate-scope">Search covers all 2175 Apple symbols, independently of browse filters.</p><nav id="investigate-active-scope" class="investigate-active-scope" aria-label="Active browse filters"></nav><div id="investigate-landscape" class="investigate-landscape" aria-label="Browse Apple symbols"></div><div class="result-bar"><output id="investigate-count">312 results</output><span>2175 searchable symbols</span></div><div id="investigate-results" class="api-index" aria-live="polite"></div><nav id="investigate-pagination" class="investigate-pagination" aria-label="Investigate result pages"></nav></section><script src="kmp-lens-report/assets/investigate-index.js"></script><script>(() => {
+  const search = document.getElementById('investigate-search');
+  const population = document.getElementById('investigate-population');
+  const dependency = document.getElementById('direct-dependency-filter');
+  const results = document.getElementById('investigate-results');
+  const count = document.getElementById('investigate-count');
+  const pagination = document.getElementById('investigate-pagination');
+  const landscape = document.getElementById('investigate-landscape');
+  const activeScope = document.getElementById('investigate-active-scope');
+  const searchScope = document.getElementById('investigate-search-scope');
+  const all = window.KMP_INVESTIGATE_INDEX || [];
+  const symbols = all.flatMap(card => [card, ...card.members]);
+  const populations = [
+    ['exact-origin', 'Exact origin'], ['generated-support', 'Generated support'],
+    ['context-only', 'Context only'], ['not-established', 'Not established'],
+  ];
+  const pageSize = 10;
+  const scrollKey = `kmp-investigate-scroll:${location.pathname}`;
+  const params = new URLSearchParams(location.search);
+  search.value = params.get('investigateQuery') || '';
+  population.value = params.get('investigatePopulation') || '';
+  dependency.value = params.get('investigateDependency') || '';
+  let currentPage = Math.max(1, Number.parseInt(params.get('investigatePage') || '1', 10) || 1);
+  let selectedGroup = params.get('investigateGroup') || '';
+  let cardsRequested = params.get('investigateView') === 'cards' || Boolean(selectedGroup);
+
+  // A group describes only this symbol's existing knowledge; it never supplies knowledge.
+  const groupOf = entry => {
+    if (entry.population === 'exact-origin') return { key: 'origin:' + entry.origin, label: entry.origin, kind: 'Exact origin' };
+    if (entry.population === 'generated-support') return { key: 'generator:' + entry.generatedBy, label: entry.generatedBy, kind: 'Generated by' };
+    if (entry.population === 'context-only') {
+      if (entry.stdlibContainerContext) return { key: 'stdlib-container', label: 'Kotlin standard library type', kind: 'Container context, not symbol Origin' };
+      if (entry.exactContainerOriginContext) return { key: 'container:' + entry.exactContainerOriginContext, label: entry.exactContainerOriginContext, kind: 'Container origin, not symbol Origin' };
+      if (entry.observedMemberOriginContext) return { key: 'members:' + entry.observedMemberOriginContext, label: entry.observedMemberOriginContext, kind: 'Observed-member context, not container Origin' };
+    }
+    return { key: 'not-established', label: 'Origin not established', kind: 'No provider is assigned by this group' };
+  };
+  const groupCounts = entries => {
+    const groups = new Map();
+    entries.forEach(entry => {
+      const identity = groupOf(entry);
+      const group = groups.get(identity.key) || { ...identity, count: 0, rank: entry.discoveryRank };
+      group.count++; group.rank = Math.min(group.rank, entry.discoveryRank);
+      groups.set(identity.key, group);
+    });
+    return [...groups.values()].sort((a, b) => a.rank - b.rank || a.label.localeCompare(b.label));
+  };
+  const browseMatches = entry =>
+    (!population.value || entry.population === population.value) &&
+    (!dependency.value || entry.dependencies.includes(dependency.value)) &&
+    (!selectedGroup || groupOf(entry).key === selectedGroup);
+  const resetDrilldown = () => { selectedGroup = ''; cardsRequested = false; currentPage = 1; };
+  const symbolLabel = size => size + (size === 1 ? ' symbol' : ' symbols');
+  const action = (label, handler, className = '') => {
+    const button = document.createElement('button'); button.type = 'button';
+    button.textContent = label; button.className = className;
+    button.addEventListener('click', handler); return button;
+  };
+
+  const renderLandscape = query => {
+    activeScope.replaceChildren();
+    const chip = (label, handler) => activeScope.append(action('Remove ' + label, handler, 'scope-chip'));
+    if (population.value) chip('population: ' + populations.find(p => p[0] === population.value)[1], () => { population.value = ''; currentPage = 1; render(); });
+    if (dependency.value) chip('dependency: ' + dependency.value, () => { dependency.value = ''; currentPage = 1; render(); });
+    if (selectedGroup) {
+      const group = symbols.map(groupOf).find(g => g.key === selectedGroup);
+      chip('group: ' + (group ? group.label : selectedGroup), () => { resetDrilldown(); render(); });
+    }
+    searchScope.textContent = query
+      ? 'Searching all ' + symbols.length + ' Apple symbols. Browse filters are retained but do not restrict Search.'
+      : 'Search covers all ' + symbols.length + ' Apple symbols, independently of browse filters.';
+    landscape.replaceChildren(); landscape.hidden = Boolean(query);
+    if (query) return;
+    if (cardsRequested) {
+      const heading = document.createElement('h3'); heading.textContent = 'Symbols in the selected scope';
+      landscape.append(heading, action('Back to groups', () => { resetDrilldown(); render(); activeScope.scrollIntoView({block: 'start'}); }, 'button browse-symbols'));
+      return;
+    }
+    const scoped = symbols.filter(entry => !dependency.value || entry.dependencies.includes(dependency.value));
+    const title = document.createElement('h3'); title.textContent = 'Browse by knowledge'; landscape.append(title);
+    const populationGrid = document.createElement('div'); populationGrid.className = 'investigate-group-grid';
+    populations.forEach(([key, label]) => {
+      const size = scoped.filter(entry => entry.population === key).length;
+      const button = action(label + ' · ' + symbolLabel(size), () => { population.value = key; resetDrilldown(); render(); }, 'investigate-group');
+      button.dataset.population = key;
+      button.setAttribute('aria-pressed', String(population.value === key));
+      populationGrid.append(button);
+    });
+    landscape.append(populationGrid);
+    if (population.value) {
+      const entries = scoped.filter(entry => entry.population === population.value);
+      const title = document.createElement('h4');
+      title.textContent = population.value === 'exact-origin' ? 'Browse by exact origin'
+        : population.value === 'generated-support' ? 'Browse by generator'
+        : population.value === 'context-only' ? 'Browse by observed context — not symbol Origin'
+        : 'Symbols without an established origin';
+      landscape.append(title);
+      const groups = document.createElement('div'); groups.className = 'investigate-group-grid';
+      groupCounts(entries).forEach(group => {
+        const button = action('', () => { selectedGroup = group.key; cardsRequested = true; currentPage = 1; render(); activeScope.scrollIntoView({block: 'start'}); }, 'investigate-group');
+        button.dataset.group = group.key; button.setAttribute('aria-pressed', String(selectedGroup === group.key));
+        const kind = document.createElement('small'); kind.textContent = group.kind;
+        const label = document.createElement('strong'); label.textContent = group.label;
+        const count = document.createElement('span'); count.textContent = symbolLabel(group.count) + ' · View cards';
+        button.append(kind, label, count); groups.append(button);
+      });
+      landscape.append(groups);
+      if (!entries.length) { const empty = document.createElement('p'); empty.textContent = 'No symbols in this population within the current scope.'; landscape.append(empty); }
+    }
+    landscape.append(action(cardsRequested ? 'Back to groups' : 'Browse symbols in this scope', () => {
+      if (cardsRequested) resetDrilldown(); else cardsRequested = true;
+      render();
+    }, 'button browse-symbols'));
+  };
+
+  const updateUrl = () => {
+    const next = new URL(location.href);
+    const values = {
+      investigateQuery: search.value.trim(),
+      investigatePopulation: population.value,
+      investigateDependency: dependency.value,
+      investigatePage: currentPage > 1 ? String(currentPage) : '',
+      investigateGroup: selectedGroup,
+      investigateView: cardsRequested ? 'cards' : '',
+    };
+    Object.entries(values).forEach(([key, value]) => value
+      ? next.searchParams.set(key, value)
+      : next.searchParams.delete(key));
+    if (next.hash !== '#published-api') next.hash = '#published-api';
+    history.replaceState(null, '', next);
+  };
+
+  const detailHref = href => {
+    const target = new URL(href, location.href);
+    if (search.value.trim()) target.searchParams.set('investigateQuery', search.value.trim());
+    if (population.value) target.searchParams.set('investigatePopulation', population.value);
+    if (dependency.value) target.searchParams.set('investigateDependency', dependency.value);
+    if (currentPage > 1) target.searchParams.set('investigatePage', String(currentPage));
+    if (selectedGroup) target.searchParams.set('investigateGroup', selectedGroup);
+    if (cardsRequested) target.searchParams.set('investigateView', 'cards');
+    return target.pathname.split('/').slice(-3).join('/') + target.search + target.hash;
+  };
+
+  const pageButton = (label, page, disabled = false, current = false) => {
+    const button = document.createElement('button');
+    button.type = 'button'; button.textContent = label; button.disabled = disabled;
+    if (current) button.setAttribute('aria-current', 'page');
+    button.addEventListener('click', () => { currentPage = page; render(); activeScope.scrollIntoView({block: 'start'}); });
+    return button;
+  };
+
+  const render = (updateLocation = true) => {
+    const query = search.value.trim().toLocaleLowerCase();
+    const selectedPopulation = population.value;
+    renderLandscape(query);
+    const filtered = all.map(card => {
+      const typeQueryMatches = !query || card.name.toLocaleLowerCase().includes(query);
+      const typeMatches = typeQueryMatches && (query || browseMatches(card));
+      let matchedMembers = card.members.filter(member =>
+        (!query || member.name.toLocaleLowerCase().includes(query)) &&
+        (query || browseMatches(member))
+      );
+      if (query && matchedMembers.some(member => member.name.toLocaleLowerCase() === query)) {
+        matchedMembers = matchedMembers.filter(member => member.name.toLocaleLowerCase() === query);
+      }
+      if (!typeMatches && matchedMembers.length === 0) return null;
+      const exactType = query && card.name.toLocaleLowerCase() === query;
+      const exactMember = query && card.members.some(member => member.name.toLocaleLowerCase() === query);
+      const queryRank = exactType ? 0 : exactMember ? 1 : typeQueryMatches ? 2 : 3;
+      const discoveryRank = typeMatches
+        ? card.discoveryRank
+        : Math.min(...matchedMembers.map(member => member.discoveryRank));
+      const symbolCount = (typeMatches ? 1 : 0) + matchedMembers.length;
+      return { card, matchedMembers: typeMatches ? [] : matchedMembers, queryRank, discoveryRank, symbolCount };
+    }).filter(Boolean).sort((left, right) =>
+      left.queryRank - right.queryRank ||
+      left.discoveryRank - right.discoveryRank ||
+      left.card.originalIndex - right.card.originalIndex
+    );
+    const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
+    currentPage = Math.min(currentPage, pageCount);
+    const visible = filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+    const symbolCount = filtered.reduce((total, match) => total + match.symbolCount, 0);
+    if (!query && !cardsRequested) {
+      count.textContent = symbolLabel(symbolCount) + ' in ' + filtered.length + (filtered.length === 1 ? ' card' : ' cards') + ' · Choose a group to explore';
+      results.replaceChildren(); pagination.replaceChildren();
+      if (updateLocation) updateUrl();
+      return;
+    }
+    count.textContent = `${symbolCount} ${symbolCount === 1 ? 'symbol' : 'symbols'} in ${filtered.length} ${filtered.length === 1 ? 'card' : 'cards'} · Page ${currentPage} of ${pageCount}`;
+    results.replaceChildren(...visible.map(match => {
+      const row = match.card;
+      const article = document.createElement('article'); article.className = 'api-card api-index-row compact-result';
+      const link = document.createElement('a'); link.href = detailHref(match.matchedMembers.length === 1 ? match.matchedMembers[0].href : row.href); link.textContent = match.matchedMembers.length === 1 ? match.matchedMembers[0].name : row.name;
+      link.className = 'result-symbol';
+      link.addEventListener('click', () => { try { sessionStorage.setItem(scrollKey, String(window.scrollY)); } catch (_) {} });
+      const meta = document.createElement('small'); meta.className = 'result-meta';
+      if (match.matchedMembers.length > 0 && !query && selectedPopulation) {
+        const matched = document.createElement('span'); matched.className = 'matched-member-result';
+        matched.textContent = `${match.matchedMembers.length} matching ${match.matchedMembers.length === 1 ? 'member' : 'members'}`;
+        meta.append(matched, document.createElement('br'));
+      } else {
+        match.matchedMembers.forEach(member => {
+          const matched = document.createElement('span'); matched.className = 'matched-member-result';
+          matched.textContent = `Matched member: ${member.label}`;
+          meta.append(matched, document.createElement('br'));
+        });
+      }
+      // Multiple matching members do not borrow their container's Origin/paths.
+      const knowledge = match.matchedMembers.length > 1 ? {} : match.matchedMembers.length === 1 ? match.matchedMembers[0] : row;
+      const memberContext = match.matchedMembers.length === 0 ? row.observedMemberOriginContext : null;
+      const hasContext = knowledge.stdlibContainerContext || knowledge.exactContainerOriginContext || memberContext;
+      if (knowledge.origin) {
+        const origin = document.createElement('span'); origin.textContent = `Origin: ${knowledge.origin}`; meta.append(origin);
+      } else if (!knowledge.generatedBy && match.matchedMembers.length < 2) {
+        const origin = document.createElement('span'); origin.textContent = hasContext
+          ? 'Origin not established for this exact symbol'
+          : 'Origin not determined'; meta.append(origin);
+      }
+      if (knowledge.generatedBy) { const generated = document.createElement('span'); generated.textContent = `Generated by ${knowledge.generatedBy}`; if (meta.childNodes.length) meta.append(document.createElement('br')); meta.append(generated); }
+      if (knowledge.generatedFor) { const context = document.createElement('span'); context.textContent = `Generated for ${knowledge.generatedFor}.`; meta.append(document.createElement('br'), context); }
+      if (knowledge.stdlibContainerContext) { const context = document.createElement('span'); context.textContent = 'Exact container: Kotlin standard library type'; meta.append(document.createElement('br'), context); }
+      if (knowledge.exactContainerOriginContext) { const context = document.createElement('span'); context.textContent = `Exact container comes from ${knowledge.exactContainerOriginContext}`; meta.append(document.createElement('br'), context); }
+      if (memberContext) { const context = document.createElement('span'); context.textContent = `Observed members of this container come from ${memberContext}.`; meta.append(document.createElement('br'), context); }
+      if (knowledge.pathCount > 0) { const paths = document.createElement('span'); paths.textContent = `${knowledge.pathCount} dependency ${knowledge.pathCount === 1 ? 'path' : 'paths'}`; meta.append(document.createElement('br'), paths); }
+      if (row.members.length > 0 && match.matchedMembers.length === 0) { const members = document.createElement('span'); members.textContent = `${row.members.length} ${row.members.length === 1 ? 'member' : 'members'}`; meta.append(document.createElement('br'), members); }
+      article.append(link, meta); return article;
+    }));
+    const controls = [pageButton('Previous', Math.max(1, currentPage - 1), currentPage === 1)];
+    const pages = new Set([1, pageCount, currentPage - 1, currentPage, currentPage + 1]);
+    let previous = 0;
+    [...pages].filter(page => page >= 1 && page <= pageCount).sort((a, b) => a - b).forEach(page => {
+      if (previous && page > previous + 1) { const gap = document.createElement('span'); gap.textContent = '…'; gap.setAttribute('aria-hidden', 'true'); controls.push(gap); }
+      controls.push(pageButton(String(page), page, false, page === currentPage)); previous = page;
+    });
+    controls.push(pageButton('Next', Math.min(pageCount, currentPage + 1), currentPage === pageCount));
+    pagination.replaceChildren(...controls);
+    if (updateLocation) updateUrl();
+  };
+  search.addEventListener('input', () => { currentPage = 1; render(); });
+  population.addEventListener('change', () => { resetDrilldown(); render(); });
+  dependency.addEventListener('change', () => { resetDrilldown(); render(); });
+  document.getElementById('clear-investigate').addEventListener('click', () => { search.value = ''; population.value = ''; dependency.value = ''; resetDrilldown(); render(); search.focus(); });
+  window.addEventListener('popstate', () => {
+    const current = new URLSearchParams(location.search);
+    search.value = current.get('investigateQuery') || '';
+    population.value = current.get('investigatePopulation') || '';
+    dependency.value = current.get('investigateDependency') || '';
+    selectedGroup = current.get('investigateGroup') || '';
+    cardsRequested = current.get('investigateView') === 'cards' || Boolean(selectedGroup);
+    currentPage = Math.max(1, Number.parseInt(current.get('investigatePage') || '1', 10) || 1);
+    render(false);
+  });
+  render(false);
+  try {
+    const restoreScroll = Number.parseInt(sessionStorage.getItem(scrollKey) || '', 10);
+    if (Number.isFinite(restoreScroll)) {
+      // Restore after the browser's initial hash navigation and stylesheet layout.
+      const restore = () => requestAnimationFrame(() => {
+        window.scrollTo({top: restoreScroll, behavior: 'instant'});
+        sessionStorage.removeItem(scrollKey);
+      });
+      if (document.readyState === 'complete') restore();
+      else window.addEventListener('load', restore, {once: true});
+    }
+  } catch (_) {}
+})();</script>
+</main><script src="kmp-lens-report/assets/v1.js"></script></body></html>
