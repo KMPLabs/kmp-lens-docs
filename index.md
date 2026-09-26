@@ -41,11 +41,11 @@ Install the plugin, run your project’s normal Gradle build, then open the gene
 
 ## Availability
 
-The current public release is **0.1.0-rc.5**, available from Maven Central.
+The current public release is **0.1.0**, available from Maven Central.
 
 | Release status | Version |
 |---|---:|
-| Recommended public release / Released | `0.1.0-rc.5` |
+| Recommended public release / Released | `0.1.0` |
 
 See [Getting started]({{ '/getting-started/' | relative_url }}) for the normal
 workflow and [Release lifecycle]({{ '/release-lifecycle/' |

@@ -8,7 +8,7 @@ permalink: /third-party-notices/
 
 # Third-party notices
 
-KMP Lens `0.1.0-rc.5` is published on Maven Central. Consult the published
+KMP Lens `0.1.0` is published on Maven Central. Consult the published
 artifact metadata for its dependency coordinates and the applicable licenses
 of those dependencies. The KMP Lens product itself is proprietary; see the
 [license page]({{ '/license/' | relative_url }}).

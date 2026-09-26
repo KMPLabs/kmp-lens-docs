@@ -14,7 +14,7 @@ produces an Apple framework; it does not introduce a replacement build flow.
 ## Apply it to the producer when known
 
 For a module that directly produces the framework, use the KMP Lens plugin ID
-`io.github.kmplabs.kmp-lens` with version `0.1.0-rc.5`, available from Maven
+`io.github.kmplabs.kmp-lens` with version `0.1.0`, available from Maven
 Central.
 
 Run that module's normal Apple link task or the project lifecycle you already

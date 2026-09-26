@@ -2,7 +2,7 @@ title: KMP Lens
 description: Developer-focused Gradle build analysis for Kotlin Multiplatform projects targeting Apple platforms.
 url: "https://kmplabs.github.io"
 baseurl: "/kmp-lens-docs"
-product_version: "0.1.0-rc.5"
+product_version: "0.1.0"
 release_status: "released"
 permalink: pretty
 markdown: kramdown

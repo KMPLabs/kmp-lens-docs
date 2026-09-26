@@ -8,9 +8,16 @@ permalink: /changelog/
 
 # Release status
 
-## 0.1.0-rc.5
+## 0.1.0
 
 **Status: RECOMMENDED.** Available from Maven Central.
+
+The first stable KMP Lens release preserves the RC5 symbol-level findings and
+report contract. It includes the qualified performance A+B improvements.
+
+## 0.1.0-rc.5
+
+**Status: SUPERSEDED / HISTORICAL.** Available from Maven Central.
 
 RC5 improves symbol-level provenance for redeclared members, qualified
 Kotlin/Native support, and exact source correspondence. It also retains the

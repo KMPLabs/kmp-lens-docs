@@ -8,7 +8,7 @@ permalink: /ci/
 
 # Automation and CI
 
-KMP Lens `0.1.0-rc.5` is available from Maven Central. Apply the plugin as
+KMP Lens `0.1.0` is available from Maven Central. Apply the plugin as
 shown in [Getting started]({{ '/getting-started/' | relative_url }}).
 
 Run the normal Apple framework build. KMP Lens performs one passive analysis;

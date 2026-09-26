@@ -9,7 +9,7 @@ permalink: /release-lifecycle/
 # Release lifecycle
 
 KMP Lens is publicly available. The current recommended release is
-**0.1.0-rc.5**.
+**0.1.0**.
 
 Published artifacts remain immutable and available so existing builds can
 resolve their exact versions. KMP Lens does not expire or disable old releases.

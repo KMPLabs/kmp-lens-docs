@@ -4,7 +4,7 @@ This repository contains the public product documentation for KMP Lens. KMP Lens
 
 Documentation site: <https://kmplabs.github.io/kmp-lens-docs/>
 
-The documentation describes the current public RC5 release and links to a
+The documentation describes the current public 0.1.0 release and links to a
 separately reviewed report from the public showcase.
 
 ## Local preview
