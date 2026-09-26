@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0F172A">
-    <meta name="description" content="Explore a real Apple-framework report generated with KMP Lens 0.1.0-rc.4.">
-    <meta property="og:title" content="KMP Lens RC4 demo report">
-    <meta property="og:description" content="Explore a real Apple-framework report generated with KMP Lens 0.1.0-rc.4.">
+    <meta name="description" content="Explore a real Apple-framework report generated with KMP Lens 0.1.0-rc.5.">
+    <meta property="og:title" content="KMP Lens RC5 demo report">
+    <meta property="og:description" content="Explore a real Apple-framework report generated with KMP Lens 0.1.0-rc.5.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kmplabs.github.io/kmp-lens-docs/demo/">
     <meta property="og:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
     <meta property="og:image:alt" content="KMP Lens — Kotlin Multiplatform architecture insight">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="KMP Lens RC4 demo report">
-    <meta name="twitter:description" content="Explore a real Apple-framework report generated with KMP Lens 0.1.0-rc.4.">
+    <meta name="twitter:title" content="KMP Lens RC5 demo report">
+    <meta name="twitter:description" content="Explore a real Apple-framework report generated with KMP Lens 0.1.0-rc.5.">
     <meta name="twitter:image" content="https://kmplabs.github.io/kmp-lens-docs/assets/social-preview.png">
-    <title>KMP Lens RC4 demo report · KMP Lens</title>
+    <title>KMP Lens RC5 demo report · KMP Lens</title>
     <link rel="canonical" href="https://kmplabs.github.io/kmp-lens-docs/demo/">
     <link rel="icon" href="/kmp-lens-docs/favicon.ico" sizes="any">
     <link rel="icon" href="/kmp-lens-docs/assets/brand/favicon-32.png" type="image/png" sizes="32x32">
@@ -31,7 +31,7 @@
           <img class="brand-mark" src="/kmp-lens-docs/assets/brand/kmp-lens-logo.png" alt="">
           <span>KMP Lens</span>
         </a>
-        <span class="release-badge">0.1.0-rc.4 · Released</span>
+        <span class="release-badge">0.1.0-rc.5 · Released</span>
       </div>
       <nav class="shell nav" aria-label="Primary navigation">
         <a href="/kmp-lens-docs/">Overview</a>
@@ -43,13 +43,13 @@
     </header>
     <main id="main" class="shell content">
 
-      <h1 id="kmp-lens-rc4-demo-report">KMP Lens RC4 demo report</h1>
+      <h1 id="kmp-lens-rc5-demo-report">KMP Lens RC5 demo report</h1>
 
-<p>This <a href="/kmp-lens-docs/demo/kmp-lens-report.html">interactive report</a> was generated with <strong>KMP Lens 0.1.0-rc.4</strong> from the public <a href="https://github.com/KMPLabs/kmp-lens-showcase">KMP Lens showcase</a>, using its <code class="language-plaintext highlighter-rouge">iosSimulatorArm64</code> Debug framework with source observation enabled. Explore the <a href="https://github.com/KMPLabs/kmp-lens-showcase/blob/main/GROUND_TRUTH.md">showcase ground truth</a> alongside the report.</p>
+<p>This <a href="/kmp-lens-docs/demo/kmp-lens-report.html">interactive report</a> was generated with <strong>KMP Lens 0.1.0-rc.5</strong> from the public <a href="https://github.com/KMPLabs/kmp-lens-showcase">KMP Lens showcase</a>, using its <code class="language-plaintext highlighter-rouge">iosSimulatorArm64</code> Debug framework with source observation enabled. Explore the <a href="https://github.com/KMPLabs/kmp-lens-showcase/blob/main/GROUND_TRUTH.md">showcase ground truth</a> alongside the report.</p>
 
-<p>The report covers 2,175 Apple symbols: 1,543 exact Origins, 573 Kotlin/Native generated-support symbols, 57 Context-only symbols, and 2 Not established. It identifies 41 exact Kotlin Source locations.</p>
+<p>The report covers 2,175 Apple symbols: 1,543 exact Origins, 575 Kotlin/Native generated-support symbols, 57 Context-only symbols, and 0 Not established. It identifies 42 exact Kotlin Source locations.</p>
 
-<p>The <a href="https://github.com/KMPLabs/kmp-lens-showcase#interpretation-and-limits">documented RC4 limitations</a> still apply. In particular, redeclared <code class="language-plaintext highlighter-rouge">ShowcaseService.name</code> and <code class="language-plaintext highlighter-rouge">title</code> members have an incorrect Origin/Provider; the <code class="language-plaintext highlighter-rouge">SettlementPlan.dueDate</code> card does not fully explain its <code class="language-plaintext highlighter-rouge">LocalDate</code> type relation; and <code class="language-plaintext highlighter-rouge">KotlinSuspendFunction1</code> remains Not established. Kotlin/Native 2.2.21 is unverified for this run, and dependency paths do not establish exact build-script source locations. Treat the showcase ground truth as the independent reference where it disagrees with the report.</p>
+<p>The <a href="https://github.com/KMPLabs/kmp-lens-showcase#interpretation-and-limits">documented RC5 interpretation and limits</a> apply. Redeclared <code class="language-plaintext highlighter-rouge">ShowcaseService.name</code> and <code class="language-plaintext highlighter-rouge">title</code> retain their <code class="language-plaintext highlighter-rouge">:showcase</code> Origin, <code class="language-plaintext highlighter-rouge">KotlinSuspendFunction1</code> is shown as generated support, and <code class="language-plaintext highlighter-rouge">PlatformIdentity</code> points to its iOS actual source. The <code class="language-plaintext highlighter-rouge">SettlementPlan.dueDate</code> card shows its <code class="language-plaintext highlighter-rouge">LocalDate</code> source signature but does not establish an explicit card-level type relation to the Maven declaration. Kotlin/Native 2.2.21 is unverified for this run, and dependency paths do not establish exact build-script source locations. Use the showcase ground truth as an independent comparison authority.</p>
 
 <p>This is a demonstration of an observed Apple surface—not a proof of dependency replacement compatibility, runtime equivalence, or binary-size impact.</p>
 
