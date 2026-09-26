@@ -8,8 +8,8 @@ permalink: /ci/
 
 # Automation and CI
 
-> Prepared for the first KMP Lens release. No KMP Lens artifact is publicly
-> available yet.
+KMP Lens `0.1.0-rc.5` is available from Maven Central. Apply the plugin as
+shown in [Getting started]({{ '/getting-started/' | relative_url }}).
 
 Run the normal Apple framework build. KMP Lens performs one passive analysis;
 there is no separate CI task:
