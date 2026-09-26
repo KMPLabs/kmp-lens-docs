@@ -12,7 +12,7 @@ KMP Lens observes the project’s normal Gradle lifecycle. There is no separate 
 
 ## Availability
 
-KMP Lens `0.1.0-rc.4` is the current public release.
+KMP Lens `0.1.0-rc.5` is the current public release.
 
 Implementation coordinate:
 
@@ -30,7 +30,7 @@ Apply it to the KMP module that produces the Apple framework:
 
 ```kotlin
 plugins {
-    id("io.github.kmplabs.kmp-lens") version "0.1.0-rc.4"
+    id("io.github.kmplabs.kmp-lens") version "0.1.0-rc.5"
 }
 ```
 

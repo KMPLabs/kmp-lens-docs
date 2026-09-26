@@ -4,9 +4,8 @@ This repository contains the public product documentation for KMP Lens. KMP Lens
 
 Documentation site: <https://kmplabs.github.io/kmp-lens-docs/>
 
-This checkout contains the prepared RC4 documentation. It must not be pushed or
-deployed until the exact Maven Central release has passed fresh-consumer
-resolution and publication has been explicitly authorized.
+The documentation describes the current public RC5 release and links to a
+separately reviewed report from the public showcase.
 
 ## Local preview
 

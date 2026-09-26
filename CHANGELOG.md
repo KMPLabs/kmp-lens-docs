@@ -8,9 +8,19 @@ permalink: /changelog/
 
 # Release status
 
-## 0.1.0-rc.4
+## 0.1.0-rc.5
 
 **Status: RECOMMENDED.** Available from Maven Central.
+
+RC5 improves symbol-level provenance for redeclared members, qualified
+Kotlin/Native support, and exact source correspondence. It also retains the
+RC4 report contract while reducing repeated Evidence and Apple-occurrence
+work in large reports. These improvements do not establish dependency
+replacement compatibility or eliminate every explicit coverage limit.
+
+## 0.1.0-rc.4
+
+**Status: SUPERSEDED / HISTORICAL.** Available from Maven Central.
 
 KMP Lens 0.1 helps investigate Apple APIs, declaration ownership, dependency
 routes, generated support and optional local source, with compatibility reported
